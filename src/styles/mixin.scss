@@ -1,0 +1,28 @@
+/**
+ * 创建于 2018/7/23
+ * 作者: QianYu
+ * 功能: 调色板/mixin
+ */
+
+// 调色板
+$dark: #2c3e50;
+$medium: #34495e;
+$light: #7f8c8d;
+$green: #42b983;
+$codebg: #f8f8f8;
+$red: #f66;
+$grey: #f9f9f9;
+$board-grey: #e3e3e3;
+
+// 字体库
+$body-font: Source Sans Pro, Helvetica Neue, Arial, sans-serif;
+$logo-font: Dosis, Source Sans Pro, Helvetica Neue, Arial, sans-serif;
+$code-font: Roboto Mono, Consolas, Monaco, courier, monospace;
+
+// 样式设置
+$radius: 2px;
+$radius-big: 4px;
+$header-height: 40px + 15px * 2;
+$header-padding: 15px 60px;
+
+$content-minwidth: 1000px;
