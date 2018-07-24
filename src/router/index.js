@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Dashboard from 'views/Dashboard'
 import LoadingAnimation from 'views/LoadingAnimation'
+import HoverAnimation from 'views/HoverAnimation'
 
 Vue.use(Router)
 
@@ -13,8 +14,13 @@ export const routes = [
   },
   {
     path: '/loadingAnimation',
-    name: '加载动画',
+    name: 'Loading 动画',
     component: LoadingAnimation
+  },
+  {
+    path: '/hoverAnimation',
+    name: 'Hover 动画',
+    component: HoverAnimation
   }
 ]
 
