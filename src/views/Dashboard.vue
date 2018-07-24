@@ -1,78 +1,39 @@
+/**
+* 创建于 2018/7/24
+* 作者: QianYu
+* 功能: Dashboard
+* From: https://juejin.im/post/5a924fcaf265da4e7d6061a6
+*/
+
+
 <template>
   <div class='dash'>
-    dashborad
-    <div class='wrapper'>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-      <i></i>
-    </div>
+    <div class='hello-wrap hello-wrap-hook' @click='goContent'>Welcome To Style Codebase</div>
+    <cloudy-spiral></cloudy-spiral>
   </div>
 </template>
 
 <script type='text/javascript'>
+  import CloudySpiral from 'styleParts/CloudySpiral'
+  
   export default {
     name: 'Dashboard',
-    data() {
-      return {}
+    components: { CloudySpiral },
+    methods: {
+      /**
+       * 进入内容
+       */
+      goContent() {
+        this.$router.push("loadingAnimation")
+      }
+    },
+    mounted() {
+      document.querySelector('.hello-wrap-hook').onmousemove = e => {
+        const x = e.pageX - e.target.offsetLeft + e.target.clientWidth / 2
+        const y = e.pageY - e.target.offsetTop
+        e.target.style.setProperty('--x', `${ x }px`)
+        e.target.style.setProperty('--y', `${ y }px`)
+      }
     }
   }
 </script>
@@ -80,48 +41,50 @@
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "~styles/mixin.scss";
   
-  $particles: 62;
-  $particleSize: 8px;
-  $radius: 80;
-  $lapDuration: 3s;
-  
   .dash {
     background: rgba(0, 0, 0, 0.9);
     height: 100%;
-    .wrapper {
+    position: relative;
+    
+    .hello-wrap {
       position: absolute;
-      top: 50%;
       left: 50%;
-      perspective: 500px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 450px;
+      height: 150px;
+      line-height: 150px;
+      text-align: center;
+      font-size: 28px;
+      border-radius: 8px;
+      background-color: $red-trans;
+      cursor: pointer;
+      transition: background .2s ease-in-out;
+      z-index: 1000;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
       
-      i {
-        display: block;
+      &:hover {
+        background-color: $red;
+        box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
+      }
+      
+      &::before {
+        content: '';
+        z-index: -2;
         position: absolute;
-        width: $particleSize;
-        height: $particleSize;
-        border-radius: $particleSize;
-        opacity: 0;
-        background: rgba(255, 255, 255, 0.5);
-        box-shadow: 0 0 10px rgba(255, 255, 255, 1);
-        animation: spin 3s infinite ease-in-out;
+        --size: 0;
+        left: var(--x);
+        top: var(--y);
+        width: var(--size);
+        height: var(--size);
+        background: radial-gradient(circle closest-side, #4405f7, transparent);
+        transform: translate(-50%, -50%);
+        transition: width .2s ease, height .2s ease;
       }
       
-      @for $i from 1 through $particles {
-        i:nth-child(#{$i}) {
-          $angle: ( $i / $particles ) * 720;
-          transform: rotate(#{$angle}deg) translate3d(#{$radius}px, 0, 0);
-          animation-delay: $i * ($lapDuration / $particles);
-        }
-      }
-      
-      @keyframes spin {
-        from {
-          opacity: 0.0;
-        }
-        to {
-          opacity: 0.6;
-          transform: translate3d(-$particleSize/2, -$particleSize/2, 570px);
-        }
+      &:hover::before {
+        --size: 450px;
       }
     }
   }

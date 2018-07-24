@@ -41,7 +41,8 @@ module.exports = {
       'router': resolve('src/router'),
       'styles': resolve('src/styles'),
       'assets': resolve('src/assets'),
-      'components': resolve('src/components')
+      'components': resolve('src/components'),
+      'styleParts': resolve('src/components/styleParts')
     }
   },
   module: {

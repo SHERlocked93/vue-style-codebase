@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <header-nav></header-nav>
-    <main class='main-container'>
+    <header-nav v-show='!isDashboard'></header-nav>
+    <main class='main-container'
+          :style='{marginTop: isDashboard ? 0 : ""}'>
       <router-view></router-view>
     </main>
   </div>
@@ -12,7 +13,12 @@
   
   export default {
     name: 'App',
-    components: { HeaderNav }
+    components: { HeaderNav },
+    computed: {
+      isDashboard() {
+        return this.$route.name === "Dashboard"
+      }
+    }
   }
 </script>
 

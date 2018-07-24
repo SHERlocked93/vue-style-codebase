@@ -22,6 +22,7 @@
                @focus="inputing = true"
                @blur="blur"
                :class="{ inputing }"/>
+        <i class='iconfont el-icon-my-search'></i>
         <ul class="result-list" v-show="searchResult.length > 0 && inputing">
           <li class="result-item"
               v-for="result in searchResult"
@@ -39,8 +40,8 @@
       <div class="nav-link-item">
         <a class="nav-link"
            target="_blank"
-           href="#">
-          <img src="~assets/github.jpeg" class="github-logo">Github</a>
+           href="https://github.com/SHERlocked93/vue-style-codebase">
+          <i class='iconfont el-icon-my-github'></i> Github</a>
       </div>
     </div>
   </div>
@@ -74,26 +75,30 @@
        * 搜索
        */
       search: _.throttle(function() {
-        this.searchResult = searchInRoutes(this.keywords, RoutesArray)
-      }, 200)
+        this.searchResult = this.searchInRoutes(this.keywords, RoutesArray)
+      }, 200),
+      
+      /**
+       * 在路由中搜索
+       * @param tar 搜索目标
+       * @param routesArr 路由配置
+       * @returns {*} 符合条件的路由配置
+       */
+      searchInRoutes(tar, routesArr) {
+        tar = tar.trim().toLowerCase().replace(/\s+/g, '-')
+        return tar && routesArr.filter(T => T.name.toLowerCase().includes(tar) || T.path.toLowerCase().includes(tar))
+      }
     },
     watch: {
-      'keywords': function() {
-        this.search()
-      }
+      'keywords':
+        
+        function() {
+          this.search()
+        }
     }
   }
-  
-  /**
-   * 在路由中搜索
-   * @param tar 搜索目标
-   * @param routesArr 路由配置
-   * @returns {*} 符合条件的路由配置
-   */
-  function searchInRoutes(tar, routesArr) {
-    tar = tar.trim().toLowerCase().replace(/\s+/g, '-')
-    return tar && routesArr.filter(T => T.name.toLowerCase().includes(tar) || T.path.toLowerCase().includes(tar))
-  }
+
+
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
@@ -112,6 +117,7 @@
     justify-content: space-between;
     align-items: center;
     line-height: 40px;
+    background-color: rgba(255, 255, 255, .9);
     
     /* LOGO */
     .nav-brand {
@@ -149,8 +155,6 @@
           color: $dark;
           border-radius: 15px;
           transition: border .2s ease;
-          background: url("~assets/search.png") 8px 5px no-repeat;
-          background-size: 20px;
           margin-right: 20px;
           outline: none;
           &.inputing {
@@ -158,12 +162,19 @@
           }
         }
         
+        .iconfont {
+          position: absolute;
+          left: 11px;
+          top: 12px;
+          color: $board-grey;
+        }
+        
         /* 搜索内容 */
         .result-list {
           position: absolute;
           top: 30px;
           left: -10px;
-          min-width: 210px;
+          min-width: 260px;
           overflow-x: hidden;
           list-style: none;
           border: 1px solid $board-grey;
@@ -187,10 +198,9 @@
       .nav-link-item {
         margin: 0 15px;
         border-bottom: 3px solid transparent;
-        .github-logo {
-          width: 30px;
-          height: 20.45px;
-          margin-bottom: -3px;
+        .iconfont {
+          margin: 0 4px;
+          font-size: 20px;
         }
         
         &:hover {
