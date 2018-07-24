@@ -26,14 +26,6 @@
       goContent() {
         this.$router.push("loadingAnimation")
       }
-    },
-    mounted() {
-      document.querySelector('.hello-wrap-hook').onmousemove = e => {
-        const x = e.pageX - e.target.offsetLeft + e.target.clientWidth / 2
-        const y = e.pageY - e.target.offsetTop
-        e.target.style.setProperty('--x', `${ x }px`)
-        e.target.style.setProperty('--y', `${ y }px`)
-      }
     }
   }
 </script>
@@ -43,7 +35,8 @@
   
   .dash {
     background: rgba(0, 0, 0, 0.9);
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
     position: relative;
     
     .hello-wrap {

@@ -45,10 +45,10 @@ module.exports = {
   
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../styleCodebase/index.html'),
+    index: path.resolve(__dirname, '../vue-style-codebase/index.html'),
     
     // Paths
-    assetsRoot: path.resolve(__dirname, '../styleCodebase'),
+    assetsRoot: path.resolve(__dirname, '../vue-style-codebase'),
     assetsSubDirectory: 'static',
     assetsPublicPath: './',
     

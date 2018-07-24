@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-本项目主要是用来预览各种样式，方便 UI、PM 进行样式设计
+自用样式库，主要是用来预览各种样式，方便 UI、PM 进行样式设计，和自己平时的开发
 
 ``` bash
 # install dependencies

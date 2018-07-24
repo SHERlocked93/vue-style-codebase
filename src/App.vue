@@ -26,7 +26,6 @@
   @import "~styles/mixin.scss";
   
   #app {
-    margin-top: $header-height;
     .main-container {
       height: 100vh;
       margin-top: $header-height;
