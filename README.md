@@ -4,6 +4,8 @@
 
 ## Build Setup
 
+[线上DEMO](http://sherlocked93.club/vue-style-codebase/)
+
 自用样式库，主要是用来预览各种样式，方便 UI、PM 进行样式设计，和自己平时的开发
 
 ``` bash

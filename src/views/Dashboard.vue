@@ -45,8 +45,9 @@
       top: 50%;
       transform: translate(-50%, -50%);
       width: 450px;
-      height: 150px;
-      line-height: 150px;
+      $this-height: 80px;
+      height: $this-height;
+      line-height: $this-height;
       text-align: center;
       font-size: 28px;
       border-radius: 8px;

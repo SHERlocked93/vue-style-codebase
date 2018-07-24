@@ -1,7 +1,7 @@
 /**
  * 创建于 2018/7/23
  * 作者: QianYu
- * 功能: 调色板/mixin
+ * 功能: 样式全局变量
  */
 
 // 调色板
@@ -21,7 +21,7 @@ $logo-font: Dosis, Source Sans Pro, Helvetica Neue, Arial, sans-serif;
 $code-font: Roboto Mono, Consolas, Monaco, courier, monospace;
 $title-font: Segoe UI Semibold, Segoe UI Symbol, Verdana, sans-serif;
 
-// 样式设置
+// 长度设置
 $radius: 2px;
 $radius-big: 4px;
 $header-height: 40px + 15px * 2;

@@ -1,0 +1,36 @@
+/**
+ * 创建于 2018/7/24
+ * 作者: QianYu
+ * 功能: 滚动条样式
+ */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(28, 31, 34, 0.8);
+  &:hover {
+    border-radius: 50px;
+    background: #3daee9;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 50px;
+  transition: .2s;
+  &:hover {
+    background: rgba(106, 110, 113, 0.1);
+  }
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0.8);
+}
