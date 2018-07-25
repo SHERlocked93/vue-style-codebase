@@ -88,6 +88,8 @@
       .nav-link-item {
         margin: 0 15px;
         border-bottom: 3px solid transparent;
+        transition: $comm-transition/2;
+        
         .iconfont {
           margin: 0 4px;
           font-size: 20px;

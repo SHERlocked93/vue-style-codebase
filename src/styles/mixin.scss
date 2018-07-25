@@ -13,9 +13,10 @@ $green-light: #e5f7ef;
 $codebg: #f8f8f8;
 $red: #f66;
 $red-trans: rgba(255, 102, 102, .8);
-$grey: #f9f9f9;
+$light-grey: #f6f6f6;
 $board-grey: #e3e3e3;
-$bg-grey: rgba(243, 243, 243, .5);
+$hover-bg-grey: rgba(243, 243, 243, .5);
+$box-shadow: rgba(201, 212, 246, 0.50);
 
 // 字体库
 $body-font: Source Sans Pro, Helvetica Neue, Arial, sans-serif;
@@ -23,13 +24,17 @@ $logo-font: Dosis, Source Sans Pro, Helvetica Neue, Arial, sans-serif;
 $code-font: Consolas, Monaco, courier, monospace;
 $title-font: Segoe UI Semibold, Segoe UI Symbol, Verdana, sans-serif;
 
+// 效果设置
+$comm-transition: .4s;
+
 // 长度设置
 $radius: 2px;
 $radius-big: 4px;
 $header-height: 40px + 15px * 2;
 $header-padding: 15px 60px;
 
-$comm-padding: 20px;
+$comm-distance: 20px;
 $content-minwidth: 1000px;
 
 $sidebar-width: 350px;
+

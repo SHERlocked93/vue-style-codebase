@@ -88,7 +88,7 @@
       border: 1px solid $board-grey;
       color: $dark;
       border-radius: 15px;
-      transition: border .2s ease;
+      transition: border $comm-transition ease;
       margin-right: 20px;
       outline: none;
       &.inputing {
@@ -123,7 +123,7 @@
         padding: 0 5px;
         &:hover {
           color: $green;
-          background-color: $grey;
+          background-color: inherit;
         }
       }
     }

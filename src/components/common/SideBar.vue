@@ -39,7 +39,7 @@
     top: $header-height;
     height: 100%;
     width: $sidebar-width;
-    padding-bottom: $comm-padding;
+    padding-bottom: $comm-distance;
     box-sizing: border-box;
     border-right: $board-grey solid 1px;
     overflow-x: hidden;
@@ -55,7 +55,7 @@
         transition: background-color .5s;
         
         &:hover {
-          background-color: $bg-grey;
+          background-color: $hover-bg-grey;
         }
         
         &:hover, & .router-link-active {

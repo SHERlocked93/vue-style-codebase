@@ -50,7 +50,7 @@
         height: 100%;
         width: 100%;
         left: 0;
-        padding-left: $sidebar-width + $padding;
+        padding-left: $sidebar-width;
         border-right: $padding lightblue;
         box-sizing: border-box;
         position: fixed;
@@ -60,7 +60,8 @@
         .content {
           margin-top: $header-height;
           padding-top: 1px; // 解决BFC导致margin合并的情况
-          padding-right: $comm-padding;
+          padding-left: $padding;
+          padding-right: $comm-distance;
         }
       }
       

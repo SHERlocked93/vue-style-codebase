@@ -7,6 +7,8 @@
 
 export default {
   mounted() {
-    window.__CPEmbed() // 重加载Codepen
+    this.nextTick(
+      window.__CPEmbed() // 重加载Codepen
+    )
   }
 }

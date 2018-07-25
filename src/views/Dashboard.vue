@@ -53,7 +53,6 @@
       border-radius: 8px;
       background-color: $red-trans;
       cursor: pointer;
-      transition: background .2s ease-in-out;
       z-index: 1000;
       box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
       overflow: hidden;
