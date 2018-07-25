@@ -39,14 +39,14 @@
     top: $header-height;
     height: 100%;
     width: $sidebar-width;
-    padding-bottom: 22px;
+    padding-bottom: $comm-padding;
     box-sizing: border-box;
     border-right: $board-grey solid 1px;
     overflow-x: hidden;
     overflow-y: auto;
     
     .el-scrollbar {
-      
+      /* 单个链接 */
       .sidebar-item {
         $this-height: 30px;
         height: $this-height;

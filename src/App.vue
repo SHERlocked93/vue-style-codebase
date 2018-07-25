@@ -58,6 +58,9 @@
         overflow-y: auto;
         
         .content {
+          margin-top: $header-height;
+          padding-top: 1px; // 解决BFC导致margin合并的情况
+          padding-right: $comm-padding;
         }
       }
       
@@ -79,7 +82,11 @@
         .content-wrapper {
           left: 0;
           padding: 0;
-          overflow: inherit;
+          overflow: hidden;
+          .content {
+            margin: 0;
+            overflow: hidden;
+          }
         }
       }
     }

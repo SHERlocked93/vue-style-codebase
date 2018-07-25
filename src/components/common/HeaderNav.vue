@@ -19,7 +19,7 @@
       <search-routes></search-routes>
       
       <div class="nav-link-item">
-        <router-link class="nav-link" to="/">API</router-link>
+        <router-link class="nav-link" to="/loadingAnimation">API</router-link>
       </div>
       
       <div class="nav-link-item">

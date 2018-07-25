@@ -14,12 +14,12 @@ export const routes = [
   },
   {
     path: '/loadingAnimation',
-    name: 'Loading 动画',
+    name: 'Loading 效果',
     component: LoadingAnimation
   },
   {
     path: '/hoverAnimation',
-    name: 'Hover 动画',
+    name: 'Hover 效果',
     component: HoverAnimation
   }
 ]
