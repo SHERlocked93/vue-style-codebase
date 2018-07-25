@@ -1,19 +1,19 @@
 /**
-* 创建于 2018/7/24
+* 创建于 2018/7/25
 * 作者: SHERlocked93
-* 功能: hover 过渡动画
+* 功能: 示例 Demo 容器
 */
 
 
 <template>
-  <div class='hover'>
-    <h2 id='hover-animation'><a href='#hover-animation'>Hover Animation</a></h2>
+  <div class='demo-box'>
+    示例
   </div>
 </template>
 
 <script type='text/javascript'>
   export default {
-    name: 'HoverAnimation',
+    name: 'DemoBox',
     data() {
       return {}
     }

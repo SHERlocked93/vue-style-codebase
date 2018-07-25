@@ -1,0 +1,13 @@
+/**
+ * 创建于 2018/7/25
+ * 作者: SHERlocked93
+ * 功能: 用以覆盖element-ui默认设置的样式
+ */
+@import "mixin";
+
+.el-scrollbar {
+  height: 100%;
+  .el-scrollbar__wrap {
+    overflow-x: hidden;
+  }
+}

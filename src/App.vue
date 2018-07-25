@@ -9,7 +9,9 @@
       
       <!-- 内容区 -->
       <main class='content-wrapper'>
-        <router-view class='content'></router-view>
+        <el-scrollbar>
+          <router-view class='content'></router-view>
+        </el-scrollbar>
       </main>
     </div>
   </div>
@@ -36,7 +38,6 @@
   #app {
     .content-sidebar-wrapper {
       display: flex;
-      margin-top: $header-height;
       
       /* 侧边栏 */
       .sidebar-wrapper {
@@ -50,7 +51,7 @@
         width: 100%;
         left: 0;
         padding-left: $sidebar-width + $padding;
-        padding-right: $padding;
+        border-right: $padding lightblue;
         box-sizing: border-box;
         position: fixed;
         overflow-x: hidden;
@@ -64,6 +65,7 @@
     
     /* 当前路由是Dashboard的情况 */
     &.is-dashboard {
+      overflow: hidden;
       .header-nav {
         display: none;
       }

@@ -3,11 +3,11 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 
-import 'styles/index.scss'
 import 'normalize.css/normalize.css'
+import 'styles/index.scss'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'styles/element-ui.scss'
 import 'assets/icon/iconfont.css'
-import 'styles/scrollbar.scss'
 
 Vue.config.productionTip = false
 

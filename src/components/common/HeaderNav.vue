@@ -1,6 +1,6 @@
 /**
 * 创建于 2018/7/23
-* 作者: QianYu
+* 作者: SHERlocked93
 * 功能: 头部导航
 */
 
@@ -58,6 +58,7 @@
     align-items: center;
     line-height: 40px;
     background-color: rgba(255, 255, 255, .9);
+    z-index: 100;
     
     /* LOGO */
     .nav-brand {
