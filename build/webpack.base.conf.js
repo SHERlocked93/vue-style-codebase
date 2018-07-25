@@ -42,6 +42,8 @@ module.exports = {
       'styles': resolve('src/styles'),
       'assets': resolve('src/assets'),
       'components': resolve('src/components'),
+      'common': resolve('src/components/common'),
+      'local': resolve('src/components/common/local'),
       'styleParts': resolve('src/components/styleParts')
     }
   },

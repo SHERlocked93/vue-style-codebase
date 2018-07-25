@@ -7,7 +7,7 @@
 
 <template>
   <div class='hover'>
-    hover 过渡动画
+    <h2 id='hover-animation'><a href='#hover-animation'>Hover Animation</a></h2>
   </div>
 </template>
 

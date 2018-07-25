@@ -33,7 +33,7 @@
     top: $header-height;
     height: 100%;
     width: $sidebar-width;
-    padding: 30px 0;
+    padding: 22px 0;
     box-sizing: border-box;
     border-right: $board-grey solid 1px;
     overflow-x: hidden;

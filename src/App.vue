@@ -9,7 +9,7 @@
       
       <!-- 内容区 -->
       <main class='content-wrapper'>
-        <router-view></router-view>
+        <router-view class='content'></router-view>
       </main>
     </div>
   </div>
@@ -34,22 +34,30 @@
   @import "~styles/mixin.scss";
   
   #app {
-    
     .content-sidebar-wrapper {
       display: flex;
       margin-top: $header-height;
       
       /* 侧边栏 */
       .sidebar-wrapper {
+        z-index: 100;
       }
       
       /* 内容区 */
       .content-wrapper {
+        $padding: 40px;
         height: 100%;
         width: 100%;
-        left: $sidebar-width + 20px;
+        left: 0;
+        padding-left: $sidebar-width + $padding;
+        padding-right: $padding;
+        box-sizing: border-box;
         position: fixed;
-        background-color: wheat;
+        overflow-x: hidden;
+        overflow-y: auto;
+        
+        .content {
+        }
       }
       
     }
@@ -62,11 +70,14 @@
       
       .content-sidebar-wrapper {
         margin-top: 0;
+        overflow: hidden;
         .sidebar-wrapper {
           display: none;
         }
         .content-wrapper {
           left: 0;
+          padding: 0;
+          overflow: inherit;
         }
       }
     }

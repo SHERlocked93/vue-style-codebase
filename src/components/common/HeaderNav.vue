@@ -33,7 +33,7 @@
 </template>
 
 <script>
-  import SearchRoutes from 'components/common/SearchRoutes'
+  import SearchRoutes from 'common/SearchRoutes'
   
   export default {
     name: 'HeaderNav',

@@ -1,3 +1,5 @@
+@import "mixin";
+
 body, html {
   min-width: 1920px;
   min-height: 1080px;
@@ -30,3 +32,22 @@ a:hover {
   text-decoration: none;
 }
 
+h2, h3 {
+  cursor: pointer;
+  position: relative;
+  margin: 20px 0;
+  
+  &:before {
+    content: '#';
+    color: $light;
+    position: absolute;
+    left: -20px;
+    display: none;
+  }
+  
+  &:hover {
+    &:before {
+      display: inline-block;
+    }
+  }
+}
