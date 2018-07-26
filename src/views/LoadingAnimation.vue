@@ -17,7 +17,9 @@
       </template>
       
       <template slot='realization'>
-        Realize 样例 Codepen
+        <p data-height="365" data-theme-id="0" data-slug-hash="JcqbE" data-default-tab="css,result" data-user="iliadraznin" data-pen-title="CSS3 Working Clock" data-preview="true"
+           class="codepen">See the Pen <a href="https://codepen.io/iliadraznin/pen/JcqbE/">CSS3 Working Clock</a> by Ilia (<a href="https://codepen.io/iliadraznin">@iliadraznin</a>) on <a
+          href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-box>
   </div>

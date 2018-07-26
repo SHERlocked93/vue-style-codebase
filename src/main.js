@@ -8,6 +8,7 @@ import 'styles/index.scss'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'styles/element-ui.scss'
 import 'assets/icon/iconfont.css'
+import 'utils/codepenEmbed'
 
 Vue.config.productionTip = false
 
