@@ -21,9 +21,10 @@
     </div>
     
     <!-- 底部 -->
-    <div class='demo-footer' @click='clickFooter'>
-      <i class="el-icon-caret-top"></i>
-      <span class='show-real'>显示实现</span>
+    <div class='demo-footer'
+         @click='clickFooter'>
+      <i :class='isExpand ? "el-icon-caret-top" : "el-icon-caret-bottom"'></i>
+      <span class='show-real'>{{isExpand? '隐藏实现' : '显示实现'}}</span>
     </div>
   </div>
 </template>
@@ -63,7 +64,7 @@
     margin: $comm-distance 0;
     
     &:hover {
-      box-shadow: 0 0 12px 1px $box-shadow;
+      box-shadow: 0 0 10px 1px $box-shadow;
     }
     
     /* 实例 */
@@ -87,6 +88,7 @@
       
       [class^='el-icon'] {
         margin-right: 10px;
+        transform: translateX(20px);
       }
       
       .show-real {

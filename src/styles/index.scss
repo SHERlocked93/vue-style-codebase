@@ -24,6 +24,10 @@ body, html {
   box-sizing: inherit;
 }
 
+*::selection {
+  background: rgba(65, 184, 163, 0.44);
+}
+
 a:focus,
 a:active {
   outline: none;
@@ -75,3 +79,4 @@ code {
   background-color: $green-light;
   border-radius: 4px;
 }
+

@@ -9,7 +9,7 @@
   <div class="header-nav">
     <!-- LOGO -->
     <router-link class="nav-brand" to="/">
-      <img class="nav-brand-logo" src="~assets/logo.png" alt="nav-brand-logo">
+      <img class="nav-brand-logo" src="~assets/logo green.png" alt="nav-brand-logo">
       <span class="nav-brand-desc">Style Codebase</span>
     </router-link>
     
@@ -66,7 +66,7 @@
         width: 40px;
         height: 40px;
         vertical-align: top;
-        margin-right: 10px;
+        margin-right: 15px;
       }
       .nav-brand-desc {
         color: $dark;
