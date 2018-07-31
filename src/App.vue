@@ -32,7 +32,7 @@
     components: { RotatingDashedBorder, HeaderNav, SideBar },
     data() {
       return {
-        backToTopHide: false
+        backToTopHide: true
       }
     },
     computed: {
@@ -81,7 +81,7 @@
           margin-top: $header-height;
           padding-top: 1px; // 解决BFC导致margin合并的情况
           padding-left: $padding;
-          padding-right: $comm-distance;
+          padding-right: $padding;
         }
       }
       

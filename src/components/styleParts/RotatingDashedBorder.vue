@@ -28,8 +28,6 @@
       scrollToTop() {
         EventBus.$emit('App.contentScrollbar.backToTop')
       }
-    },
-    mounted() {
     }
   }
 </script>
@@ -77,7 +75,7 @@
         left: 0;
         top: 0;
         width: 300%;
-        border-bottom: 1.5px dashed;
+        border-bottom: 2px dashed;
         animation: slideDash 8s infinite linear;
       }
     }
