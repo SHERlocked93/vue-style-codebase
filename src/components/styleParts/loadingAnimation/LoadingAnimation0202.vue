@@ -17,7 +17,7 @@
 
 <script type='text/javascript'>
   export default {
-    name: 'LoadingAnimation3'
+    name: 'LoadingAnimation0202'
   }
 </script>
 

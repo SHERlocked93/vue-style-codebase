@@ -11,23 +11,21 @@
     <h2 id='loading-animation'><a href='#loading-animation'>Loading Animation</a></h2>
     
     <h3>音阶波浪Loading效果</h3>
-    加载中状态的动效，下面是用不同动画的速度曲线实现的音阶波浪Loading动效
-    
     <demo-block>
       <template slot='blackboard'>
         <demo-box>
-          <loading-animation1 timingFunction='ease'></loading-animation1>
+          <loading-animation0101 timingFunction='ease'></loading-animation0101>
         </demo-box>
         <demo-box>
-          <loading-animation1 timingFunction='ease-in'></loading-animation1>
+          <loading-animation0101 timingFunction='ease-in'></loading-animation0101>
         </demo-box>
         <demo-box>
-          <loading-animation1 timingFunction='linear'></loading-animation1>
+          <loading-animation0101 timingFunction='linear'></loading-animation0101>
         </demo-box>
       </template>
       
       <template slot='description'>
-        根据自己需要修改<code>timingFunction</code>的动效，参数为<code>animation-timing-function</code>
+        根据自己需要修改<code>timingFunction</code>的动效，参数为<code>animation-timing-function</code>。
       </template>
       
       <template slot='realization'>
@@ -38,25 +36,38 @@
     </demo-block>
     
     <h3>小球乱动Loading效果</h3>
-    
     <demo-block>
       <template slot='blackboard'>
         <demo-box thisWidth='180'>
-          <loading-animation2></loading-animation2>
+          <loading-animation0201></loading-animation0201>
         </demo-box>
         <demo-box thisWidth='180'>
-          <loading-animation3></loading-animation3>
+          <loading-animation0202></loading-animation0202>
         </demo-box>
-      </template>
-      
-      <template slot='description'>
-        根据自己需要修改<code>timingFunction</code>的动效，参数为<code>animation-timing-function</code>
       </template>
       
       <template slot='realization'>
         <p data-height="265" data-theme-id="light" data-slug-hash="zrijB" data-default-tab="css,result" data-user="stryju" data-pen-title="@desnadro's [Loader dots], but one element"
            data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/stryju/pen/zrijB/">@desnadro's [Loader dots], but one element</a> by tomasz stryjewski (<a
           href="https://codepen.io/stryju">@stryju</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        
+        <p data-height="265" data-theme-id="light" data-slug-hash="DusIE" data-default-tab="css,result" data-user="janrubio" data-pen-title="Windows 8 Loading Animation" data-preview="true"
+           class="codepen">See the Pen <a href="https://codepen.io/janrubio/pen/DusIE/">Windows 8 Loading Animation</a> by Jan Rubio (<a href="https://codepen.io/janrubio">@janrubio</a>) on <a
+          href="https://codepen.io">CodePen</a>.</p>
+      </template>
+    </demo-block>
+    
+    <h3>环形Loading效果</h3>
+    <demo-block>
+      <template slot='blackboard'>
+      </template>
+      
+      <template slot='description'>
+        小球通常使用<code>border-radius</code>为50%的div来实现，再使用<code>animation</code>来实现动画。
+      </template>
+      
+      <template slot='realization'>
+      
       </template>
     </demo-block>
   </div>
@@ -64,13 +75,13 @@
 
 <script type='text/javascript'>
   import DemoBlock from 'local/DemoBlock'
-  import LoadingAnimation1 from 'styleParts/loadingAnimation/LoadingAnimation1'
-  import LoadingAnimation2 from 'styleParts/loadingAnimation/LoadingAnimation2'
-  import LoadingAnimation3 from 'styleParts/loadingAnimation/LoadingAnimation3'
+  import LoadingAnimation0101 from 'styleParts/loadingAnimation/LoadingAnimation0101'
+  import LoadingAnimation0201 from 'styleParts/loadingAnimation/LoadingAnimation0201'
+  import LoadingAnimation0202 from 'styleParts/loadingAnimation/LoadingAnimation0202'
   
   export default {
     name: 'LoadingAnimation',
-    components: { LoadingAnimation1, LoadingAnimation2, LoadingAnimation3, DemoBlock }
+    components: { LoadingAnimation0101, LoadingAnimation0201, LoadingAnimation0202, DemoBlock }
   }
 </script>
 

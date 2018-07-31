@@ -3,7 +3,8 @@
 * 作者: SHERlocked93
 * 功能: 示例 Demo 容器
 * slot name: blackboard 演示区
-* slot name: realization 实现区 Codepen
+* slot name: description 描述区
+* slot name: realization 实现区
 */
 
 
@@ -16,11 +17,11 @@
     
     <!-- 实现 -->
     <div class='demo-play' v-if='isExpand' ref='demoReal'>
-      <div class='demo-desc'>
+      <div class='demo-desc' v-if='$slots.description'>
         <slot name='description'></slot>
       </div>
       
-      <div class='demo-real'>
+      <div class='demo-real' v-if='$slots.realization'>
         <slot name='realization'></slot>
       </div>
     </div>
@@ -38,7 +39,7 @@
   import mixin from 'local/CommonMixin'
   
   export default {
-    name: 'DemoBox',
+    name: 'DemoBlock',
     mixins: [mixin],
     data() {
       return {
@@ -76,6 +77,7 @@
     .demo-board {
       display: flex;
       flex-flow: row;
+      flex-wrap: wrap;
       border-bottom: $comm-border;
       .demo-box {
         padding: $comm-distance;
