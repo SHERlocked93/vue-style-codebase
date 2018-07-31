@@ -8,7 +8,7 @@
 <template>
   <div class="header-nav">
     <!-- LOGO -->
-    <router-link class="nav-brand" tag='div' to="/">
+    <router-link class="nav-brand" tag='div' to="/" id='#'>
       <rotate-background-rays></rotate-background-rays>
       <span class="nav-brand-desc">Style Codebase</span>
     </router-link>

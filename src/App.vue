@@ -9,25 +9,45 @@
       
       <!-- 内容区 -->
       <main class='content-wrapper'>
-        <el-scrollbar>
+        <el-scrollbar ref='scrollbar'>
           <router-view class='content'></router-view>
         </el-scrollbar>
       </main>
     </div>
+    
+    <!-- 回顶部 -->
+    <rotating-dashed-border class='back-to-top' :class='{hide: backToTopHide}'></rotating-dashed-border>
   </div>
 </template>
 
 <script>
-  import HeaderNav from 'components/common/HeaderNav'
-  import SideBar from 'components/common/SideBar'
+  import _ from 'lodash'
+  import EventBus from 'utils/eventBus'
+  import HeaderNav from 'common/HeaderNav'
+  import SideBar from 'common/SideBar'
+  import RotatingDashedBorder from 'styleParts/RotatingDashedBorder'
   
   export default {
     name: 'App',
-    components: { HeaderNav, SideBar },
+    components: { RotatingDashedBorder, HeaderNav, SideBar },
+    data() {
+      return {
+        backToTopHide: false
+      }
+    },
     computed: {
       isDashboard() {
         return this.$route.name === "Dashboard"
       }
+    },
+    mounted() {
+      const scrollbarWrapper = this.$refs.scrollbar.$refs.wrap
+      
+      EventBus.scrollbarWrapper = scrollbarWrapper
+      EventBus.$on('App.contentScrollbar.backToTop', () => scrollbarWrapper && (scrollbarWrapper.scrollTop = 0))
+      scrollbarWrapper.addEventListener('scroll', _.throttle(() =>
+          this.backToTopHide = scrollbarWrapper.scrollTop < 150
+        , 250))
     }
   }
 </script>
@@ -89,6 +109,21 @@
             overflow: hidden;
           }
         }
+      }
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      opacity: 1;
+      visibility: visible;
+      transition: visibility, transform .5s ease-out;
+      
+      &.hide {
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(50%);
       }
     }
   }

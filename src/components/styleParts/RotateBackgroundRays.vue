@@ -22,7 +22,7 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   .rays-wrapper {
-    $width: 70px;
+    $width: 65px;
     position: relative;
     width: $width;
     height: $width;
@@ -43,7 +43,7 @@
     .rays {
       width: 100%;
       height: 100%;
-      animation: myRotate linear infinite 60s;
+      animation: myRotate linear infinite 20s;
     }
     
     @keyframes myRotate {

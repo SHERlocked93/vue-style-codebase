@@ -26,7 +26,6 @@
 
 <script type='text/javascript'>
   import _ from 'lodash'
-  import EventBus from 'utils/eventBus'
   import { routes as RoutesArray } from 'router'
   
   export default {
