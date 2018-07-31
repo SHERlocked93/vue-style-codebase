@@ -41,7 +41,7 @@
     width: $sidebar-width;
     padding-bottom: $comm-distance;
     box-sizing: border-box;
-    border-right: $board-grey solid 1px;
+    border-right: $border-grey solid 1px;
     overflow-x: hidden;
     overflow-y: auto;
     

@@ -84,7 +84,7 @@
       line-height: 30px;
       box-sizing: border-box;
       padding: 0 15px 0 30px;
-      border: 1px solid $board-grey;
+      border: 1px solid $border-grey;
       color: $dark;
       border-radius: 15px;
       transition: border $comm-transition ease;
@@ -99,7 +99,7 @@
       position: absolute;
       left: 11px;
       top: 12px;
-      color: $board-grey;
+      color: $border-grey;
     }
     
     /* 搜索内容 */
@@ -110,7 +110,7 @@
       min-width: 260px;
       overflow-x: hidden;
       list-style: none;
-      border: 1px solid $board-grey;
+      border: 1px solid $border-grey;
       border-radius: $radius-big;
       background-color: white;
       margin: 10px 0 0;

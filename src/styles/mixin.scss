@@ -14,7 +14,7 @@ $codebg: #f8f8f8;
 $red: #f66;
 $red-trans: rgba(255, 102, 102, .8);
 $light-grey: #f6f6f6;
-$board-grey: #e3e3e3;
+$border-grey: #e3e3e3;
 $hover-bg-grey: rgba(243, 243, 243, .5);
 $box-shadow: rgba(201, 212, 246, 0.50);
 
@@ -26,6 +26,7 @@ $title-font: Segoe UI Semibold, Segoe UI Symbol, Verdana, sans-serif;
 
 // 效果设置
 $comm-transition: .4s;
+$comm-border: 1px solid $light-grey;
 
 // 长度设置
 $radius: 2px;

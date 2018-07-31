@@ -1,0 +1,76 @@
+/**
+* 创建于 2018/7/31
+* 作者: QianYu
+* 功能: 加载中动效 LoadingAnimation1
+* Codepen: https://codepen.io/SHERlocked93/pen/YjQQoR
+*/
+
+
+<template>
+  <div class="loading-animation">
+    <span v-for='n in 15' :key='n'
+          :style='{"animation-timing-function": timingFunction}'></span>
+  </div>
+</template>
+
+<script type='text/javascript'>
+  export default {
+    name: 'LoadingAnimation1',
+    props: {
+      timingFunction: {
+        type: String,
+        default: 'ease'
+      }         // 动效
+    }
+  }
+</script>
+
+<style rel="stylesheet/scss" lang="scss" scoped>
+  .loading-animation {
+    transform: scale(.3);
+    $speed: 2.5s;
+    $margin-top: 33%;
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    width: 140px;
+    height: 100px;
+    span {
+      display: block;
+      background: #ccc;
+      width: 4px;
+      height: 10%;
+      border-radius: 10px;
+      margin-right: 5px;
+      margin-top: $margin-top;
+      float: left;
+      &:last-child {
+        margin-right: 0;
+      }
+      @for $i from 1 through 15 {
+        &:nth-child(#{$i}) {
+          animation: load $speed abs(1.6s - 0.2s * $i) infinite;
+        }
+      }
+    }
+    
+    @keyframes load {
+      0% {
+        background: #ccc;
+        margin-top: $margin-top;
+        height: 10%;
+      }
+      50% {
+        background: #2c3e50;
+        height: 100%;
+        margin-top: 0;
+      }
+      100% {
+        background: #ccc;
+        height: 10%;
+        margin-top: $margin-top;
+      }
+    }
+  }
+
+</style>

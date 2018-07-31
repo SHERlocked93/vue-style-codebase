@@ -76,16 +76,17 @@
     .demo-board {
       display: flex;
       flex-flow: row;
+      border-bottom: $comm-border;
       .demo-box {
-        margin-left: $comm-distance;
-        &:first-of-type {
-          margin-left: 0;
-        }
+        padding: $comm-distance;
+        /*border-right: $comm-border;*/
       }
     }
     
     /* 实现 */
     .demo-play {
+      padding: $comm-distance;
+      border-bottom: $comm-border;
       .demo-desc {
         background-color: $light-grey;
         border-radius: $radius;
@@ -94,11 +95,6 @@
       }
       .demo-real {
       }
-    }
-    
-    .demo-board, .demo-play {
-      border-bottom: 1px solid $light-grey;
-      padding: $comm-distance;
     }
     
     /* 底部 */

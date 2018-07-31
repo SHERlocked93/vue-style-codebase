@@ -6,19 +6,28 @@
 
 
 <template>
-  <div class='demo-box'>
+  <div class='demo-box' :style='{width: thisWidth ? thisWidth + "px" : ""}'>
     <slot></slot>
   </div>
 </template>
 
 <script type='text/javascript'>
   export default {
-    name: 'DemoBox'
+    name: 'DemoBox',
+    props: {
+      thisWidth: {
+        type: String,
+        default: ''
+      }       // 宽度
+    }
   }
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   .demo-box {
-    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
   }
 </style>
