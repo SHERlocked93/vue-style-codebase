@@ -8,10 +8,11 @@
 <template>
   <div class="header-nav">
     <!-- LOGO -->
-    <router-link class="nav-brand" to="/">
-      <img class="nav-brand-logo" src="~assets/logo green.png" alt="nav-brand-logo">
+    <router-link class="nav-brand" tag='div' to="/">
+      <rotate-background-rays></rotate-background-rays>
       <span class="nav-brand-desc">Style Codebase</span>
     </router-link>
+    
     
     <!-- 链接 -->
     <div class="nav-link-container">
@@ -34,10 +35,16 @@
 
 <script>
   import SearchRoutes from 'common/SearchRoutes'
+  import RotateBackgroundRays from 'styleParts/RotateBackgroundRays'
   
   export default {
     name: 'HeaderNav',
-    components: { SearchRoutes }
+    components: { RotateBackgroundRays, SearchRoutes },
+    data() {
+      return {
+        ddd: require("../../assets/logo green.png")
+      }
+    }
   }
 </script>
 
@@ -62,6 +69,9 @@
     
     /* LOGO */
     .nav-brand {
+      display: flex;
+      align-items: center;
+      
       .nav-brand-logo {
         width: 40px;
         height: 40px;

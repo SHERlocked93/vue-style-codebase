@@ -2,7 +2,7 @@
 * 创建于 2018/7/24
 * 作者: SHERlocked93
 * 功能: Cloudy Spiral 螺旋云
-* From: https://codepen.io/hakimel/pen/aIhkf
+* Codepen: https://codepen.io/hakimel/pen/aIhkf
 */
 
 
