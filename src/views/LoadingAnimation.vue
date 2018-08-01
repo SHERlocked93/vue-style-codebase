@@ -14,16 +14,16 @@
     <h3>音阶波浪 Loading效果</h3>
     <demo-block>
       <template slot='blackboard'>
-        <demo-box thisNo='LoadingAnimation0101'>
+        <demo-box thisName='LoadingAnimation0101'>
           <loading-animation0101 timingFunction='ease'></loading-animation0101>
         </demo-box>
-        <demo-box thisNo='LoadingAnimation0101'>
+        <demo-box thisName='LoadingAnimation0101'>
           <loading-animation0101 timingFunction='ease-in'></loading-animation0101>
         </demo-box>
-        <demo-box thisNo='LoadingAnimation0101'>
+        <demo-box thisName='LoadingAnimation0101'>
           <loading-animation0101 timingFunction='linear'></loading-animation0101>
         </demo-box>
-        <demo-box thisNo='LoadingAnimation0102'>
+        <demo-box thisName='LoadingAnimation0102'>
           <loading-animation0102></loading-animation0102>
         </demo-box>
       </template>
@@ -36,6 +36,10 @@
         <p data-height="265" data-theme-id="light" data-slug-hash="YjQQoR" data-default-tab="css,result" data-user="SHERlocked93" data-pen-title="CSS3 Loading Animation" data-preview="true"
            class="codepen">See the Pen <a href="https://codepen.io/SHERlocked93/pen/YjQQoR/">CSS3 Loading Animation</a> by SHERlocked93 (<a href="https://codepen.io/SHERlocked93">@SHERlocked93</a>) on
           <a href="https://codepen.io">CodePen</a>.</p>
+        
+        <p data-height="265" data-theme-id="light" data-slug-hash="yJxFo" data-default-tab="css,result" data-user="filipekiss" data-pen-title="Loading Animations" data-preview="true"
+           class="codepen">See the Pen <a href="https://codepen.io/filipekiss/pen/yJxFo/">Loading Animations</a> by Filipe Kiss (<a href="https://codepen.io/filipekiss">@filipekiss</a>) on <a
+          href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
     
@@ -43,16 +47,16 @@
     <h3>小球球 Loading效果</h3>
     <demo-block>
       <template slot='blackboard'>
-        <demo-box thisNo='LoadingAnimation0201'>
+        <demo-box thisName='LoadingAnimation0201'>
           <loading-animation0201></loading-animation0201>
         </demo-box>
-        <demo-box thisNo='LoadingAnimation0203'>
+        <demo-box thisName='LoadingAnimation0203'>
           <loading-animation0203></loading-animation0203>
         </demo-box>
-        <demo-box thisNo='LoadingAnimation0204'>
+        <demo-box thisName='LoadingAnimation0204'>
           <loading-animation0204></loading-animation0204>
         </demo-box>
-        <demo-box thisNo='LoadingAnimation0202'>
+        <demo-box thisName='LoadingAnimation0202'>
           <loading-animation0202></loading-animation0202>
         </demo-box>
       </template>
@@ -76,10 +80,10 @@
     <h3>环形 Loading效果</h3>
     <demo-block>
       <template slot='blackboard'>
-        <demo-box thisNo='LoadingAnimation0301'>
+        <demo-box thisName='LoadingAnimation0301'>
           <loading-animation0301></loading-animation0301>
         </demo-box>
-        <demo-box thisNo='LoadingAnimation0302'>
+        <demo-box thisName='LoadingAnimation0302'>
           <loading-animation0302></loading-animation0302>
         </demo-box>
       </template>
@@ -113,11 +117,14 @@
     <h3>其他 Loading效果</h3>
     <demo-block>
       <template slot='blackboard'>
-        <demo-box thisNo='LoadingAnimation0501'>
+        <demo-box thisName='LoadingAnimation0501'>
           <loading-animation0501></loading-animation0501>
         </demo-box>
-        <demo-box thisNo='LoadingAnimation0502'>
+        <demo-box thisName='LoadingAnimation0502'>
           <loading-animation0502></loading-animation0502>
+        </demo-box>
+        <demo-box thisName='LoadingAnimation0503'>
+          <loading-animation0503></loading-animation0503>
         </demo-box>
       </template>
       
@@ -142,6 +149,7 @@
   import LoadingAnimation0302 from 'styleParts/loadingAnimation/LoadingAnimation0302'
   import LoadingAnimation0501 from 'styleParts/loadingAnimation/LoadingAnimation0501'
   import LoadingAnimation0502 from 'styleParts/loadingAnimation/LoadingAnimation0502'
+  import LoadingAnimation0503 from 'styleParts/loadingAnimation/LoadingAnimation0503'
   
   export default {
     name: 'LoadingAnimation',
@@ -150,7 +158,8 @@
       LoadingAnimation0201, LoadingAnimation0202,
       LoadingAnimation0203, LoadingAnimation0204,
       LoadingAnimation0301, LoadingAnimation0302,
-      LoadingAnimation0501, LoadingAnimation0502, DemoBlock
+      LoadingAnimation0501, LoadingAnimation0502,
+      LoadingAnimation0503, DemoBlock
     }
   }
 </script>

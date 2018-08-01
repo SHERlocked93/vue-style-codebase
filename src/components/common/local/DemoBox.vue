@@ -6,29 +6,38 @@
 
 
 <template>
-  <div class='demo-box'
+  <div class='demo-box demo-box-hook'
+       ref='demoBox'
+       :data-clipboard-text='thisName'
+       :title='"点击复制组件名："+ thisName'
        :style='{
             width: thisWidth ? thisWidth + "px" : "",
             height: thisWidth ? thisWidth + "px" : ""}'>
     <slot></slot>
     <div class='demo-no'>
-      {{thisNo}}
+      {{thisName}}
     </div>
   </div>
 </template>
 
 <script type='text/javascript'>
+  import ClipboardMixin from 'mixins/clipboardMixin'
+  
   export default {
     name: 'DemoBox',
+    mixins: [ClipboardMixin],
     props: {
       thisWidth: {
         type: Number,
         default: 180
       },       // 宽度
-      thisNo: {
+      thisName: {
         type: String,
         default: ''
-      }        // 组件编号
+      }        // 组件名称
+    },
+    mounted() {
+      this._loadEleClipboard(this.$refs.demoBox)
     }
   }
 </script>
@@ -41,6 +50,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    cursor: pointer;
+    
     .demo-no {
       visibility: hidden;
       position: absolute;

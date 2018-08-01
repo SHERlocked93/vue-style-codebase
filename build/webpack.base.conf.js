@@ -44,6 +44,7 @@ module.exports = {
       'components': resolve('src/components'),
       'common': resolve('src/components/common'),
       'local': resolve('src/components/common/local'),
+      'mixins': resolve('src/components/common/mixins'),
       'styleParts': resolve('src/components/styleParts')
     }
   },

@@ -1,7 +1,7 @@
 /**
  * 创建于 2018/7/25
  * 作者: SHERlocked93
- * 功能: 通用Mixin
+ * 功能: Codepen相关的Mixin
  */
 
 

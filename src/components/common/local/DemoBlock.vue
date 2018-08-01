@@ -36,11 +36,11 @@
 </template>
 
 <script type='text/javascript'>
-  import mixin from 'local/CommonMixin'
+  import CodepenMixin from 'mixins/codepenMixin'
   
   export default {
     name: 'DemoBlock',
-    mixins: [mixin],
+    mixins: [CodepenMixin],
     data() {
       return {
         isExpand: false     // 当前是否是展开

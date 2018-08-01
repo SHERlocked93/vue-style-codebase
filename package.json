@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "clipboard": "^2.0.1",
     "echarts": "^4.1.0",
     "element-ui": "^2.4.4",
     "lodash": "^4.17.10",

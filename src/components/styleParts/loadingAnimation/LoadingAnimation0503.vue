@@ -1,7 +1,7 @@
 /**
 * 创建于 2018/8/1
 * 作者: QianYu
-* 功能: LoadingAnimation0502 其他 Loading效果
+* 功能: LoadingAnimation0503 其他 Loading效果
 * Codepen: https://codepen.io/filipekiss/pen/yJxFo
 */
 
@@ -11,12 +11,12 @@
 
 <script type='text/javascript'>
   export default {
-    name: 'LoadingAnimation0502'
+    name: 'LoadingAnimation0503'
   }
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-  $bubble-size: 10px;
+  $bubble-size: 8px; // 修改大小
   $base-color: #2c3e50; // 修改小球的颜色
   
   .loading-flip {
@@ -24,7 +24,8 @@
     height: $bubble-size *2;
     background: $base-color;
     margin: 0 auto;
-    animation: flip 8s infinite;}
+    animation: flip 8s infinite;
+  }
   
   @keyframes flip {
     0% {
