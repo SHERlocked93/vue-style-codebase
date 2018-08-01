@@ -11,6 +11,9 @@
             width: thisWidth ? thisWidth + "px" : "",
             height: thisWidth ? thisWidth + "px" : ""}'>
     <slot></slot>
+    <div class='demo-no'>
+      {{thisNo}}
+    </div>
   </div>
 </template>
 
@@ -19,18 +22,37 @@
     name: 'DemoBox',
     props: {
       thisWidth: {
+        type: Number,
+        default: 180
+      },       // 宽度
+      thisNo: {
         type: String,
-        default: '180'
-      }       // 宽度
+        default: ''
+      }        // 组件编号
     }
   }
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
+  @import '~styles/mixin.scss';
+  
   .demo-box {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    .demo-no {
+      visibility: hidden;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: $border-grey;
+    }
+    
+    &:hover {
+      .demo-no {
+        visibility: visible;
+      }
+    }
   }
 </style>
