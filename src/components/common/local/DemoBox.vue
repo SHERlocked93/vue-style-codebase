@@ -20,7 +20,7 @@
     props: {
       thisWidth: {
         type: String,
-        default: ''
+        default: '180'
       }       // 宽度
     }
   }

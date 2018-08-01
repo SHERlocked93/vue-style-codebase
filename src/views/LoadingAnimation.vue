@@ -8,7 +8,7 @@
 <template>
   <div class='loading'>
     
-    <h2 id='loading-animation'><a href='#loading-animation'>Loading Animation</a></h2>
+    <h2 id='loading-animation'>Loading Animation</h2>
     
     <!--#01 音阶波浪 Loading效果-->
     <h3>音阶波浪 Loading效果</h3>
@@ -22,6 +22,9 @@
         </demo-box>
         <demo-box>
           <loading-animation0101 timingFunction='linear'></loading-animation0101>
+        </demo-box>
+        <demo-box>
+          <loading-animation0102></loading-animation0102>
         </demo-box>
       </template>
       
@@ -40,16 +43,16 @@
     <h3>小球球 Loading效果</h3>
     <demo-block>
       <template slot='blackboard'>
-        <demo-box thisWidth='180'>
+        <demo-box>
           <loading-animation0201></loading-animation0201>
         </demo-box>
-        <demo-box thisWidth='180'>
+        <demo-box>
           <loading-animation0203></loading-animation0203>
         </demo-box>
-        <demo-box thisWidth='180'>
+        <demo-box>
           <loading-animation0204></loading-animation0204>
         </demo-box>
-        <demo-box thisWidth='180'>
+        <demo-box>
           <loading-animation0202></loading-animation0202>
         </demo-box>
       </template>
@@ -73,8 +76,8 @@
     <h3>环形 Loading效果</h3>
     <demo-block>
       <template slot='blackboard'>
-        <demo-box thisWidth='180'>
-          <loading-animation0201></loading-animation0201>
+        <demo-box>
+          <loading-animation0301></loading-animation0301>
         </demo-box>
       </template>
       
@@ -89,7 +92,7 @@
     <h3>丝带 Loading效果</h3>
     <demo-block>
       <template slot='blackboard'>
-        <demo-box thisWidth='180'>
+        <demo-box>
           <loading-animation0201></loading-animation0201>
         </demo-box>
       </template>
@@ -107,10 +110,10 @@
     <h3>其他 Loading效果</h3>
     <demo-block>
       <template slot='blackboard'>
-        <demo-box thisWidth='180'>
+        <demo-box>
           <loading-animation0501></loading-animation0501>
         </demo-box>
-        <demo-box thisWidth='180'>
+        <demo-box>
           <loading-animation0502></loading-animation0502>
         </demo-box>
       </template>
@@ -127,16 +130,21 @@
 <script type='text/javascript'>
   import DemoBlock from 'local/DemoBlock'
   import LoadingAnimation0101 from 'styleParts/loadingAnimation/LoadingAnimation0101'
+  import LoadingAnimation0102 from 'styleParts/loadingAnimation/LoadingAnimation0102'
   import LoadingAnimation0201 from 'styleParts/loadingAnimation/LoadingAnimation0201'
   import LoadingAnimation0202 from 'styleParts/loadingAnimation/LoadingAnimation0202'
   import LoadingAnimation0203 from 'styleParts/loadingAnimation/LoadingAnimation0203'
   import LoadingAnimation0204 from 'styleParts/loadingAnimation/LoadingAnimation0204'
+  import LoadingAnimation0301 from 'styleParts/loadingAnimation/LoadingAnimation0301'
   import LoadingAnimation0501 from 'styleParts/loadingAnimation/LoadingAnimation0501'
   import LoadingAnimation0502 from 'styleParts/loadingAnimation/LoadingAnimation0502'
   
   export default {
     name: 'LoadingAnimation',
-    components: { LoadingAnimation0101, LoadingAnimation0201, LoadingAnimation0202, LoadingAnimation0203, LoadingAnimation0204, LoadingAnimation0501, LoadingAnimation0502, DemoBlock }
+    components: {
+      LoadingAnimation0101, LoadingAnimation0102, LoadingAnimation0201, LoadingAnimation0202, LoadingAnimation0203, LoadingAnimation0204, LoadingAnimation0301, LoadingAnimation0501,
+      LoadingAnimation0502, DemoBlock
+    }
   }
 </script>
 
