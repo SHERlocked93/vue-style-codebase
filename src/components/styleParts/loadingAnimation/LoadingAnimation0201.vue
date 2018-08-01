@@ -1,7 +1,7 @@
 /**
 * 创建于 2018/7/31
 * 作者: QianYu
-* 功能: 加载中动效 LoadingAnimation2
+* 功能: LoadingAnimation2  小球球 Loading效果
 * Codepen: https://codepen.io/stryju/pen/zrijB
 */
 
@@ -20,18 +20,15 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   .loading-animation2 {
-    $dot-color: #2c3e50; // 修改小球的颜色
+    $base-color: #2c3e50; // 修改小球的颜色
     $anim-duration: .6s;
     $dot-size: 30px;
+    transform: scale(.6); // 修改大小
     
     %anim {
       animation-duration: $anim-duration;
       animation-timing-function: ease-in-out;
       animation-iteration-count: infinite;
-    }
-    
-    body {
-      font-family: sans-serif;
     }
     
     i {
@@ -40,8 +37,8 @@
       height: 140px;
       margin: auto;
       display: block;
-      background: radial-gradient(closest-side, $dot-color 90%, transparent) no-repeat 0 50%,
-      radial-gradient(closest-side, $dot-color 90%, transparent) no-repeat 0 50%;
+      background: radial-gradient(closest-side, $base-color 90%, transparent) no-repeat 0 50%,
+      radial-gradient(closest-side, $base-color 90%, transparent) no-repeat 0 50%;
       background-size: $dot-size $dot-size;
       position: relative;
       transform: translateZ(0) scale(0.25);
@@ -53,7 +50,7 @@
         content: '';
         width: $dot-size;
         height: $dot-size;
-        background: radial-gradient(closest-side, $dot-color 90%, transparent);
+        background: radial-gradient(closest-side, $base-color 90%, transparent);
         position: absolute;
         top: 50%;
         margin-top: - $dot-size * 0.5;

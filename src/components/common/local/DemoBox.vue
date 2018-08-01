@@ -6,7 +6,10 @@
 
 
 <template>
-  <div class='demo-box' :style='{width: thisWidth ? thisWidth + "px" : ""}'>
+  <div class='demo-box'
+       :style='{
+            width: thisWidth ? thisWidth + "px" : "",
+            height: thisWidth ? thisWidth + "px" : ""}'>
     <slot></slot>
   </div>
 </template>

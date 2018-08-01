@@ -46,7 +46,7 @@
       EventBus.scrollbarWrapper = scrollbarWrapper
       EventBus.$on('App.contentScrollbar.backToTop', () => scrollbarWrapper && (scrollbarWrapper.scrollTop = 0))
       scrollbarWrapper.addEventListener('scroll', _.throttle(() =>
-          this.backToTopHide = scrollbarWrapper.scrollTop < 150
+          this.backToTopHide = scrollbarWrapper.scrollTop < 100
         , 250))
     }
   }

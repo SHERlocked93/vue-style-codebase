@@ -1,7 +1,7 @@
 /**
 * 创建于 2018/7/31
 * 作者: QianYu
-* 功能: 加载中动效 LoadingAnimation1
+* 功能: LoadingAnimation0202  小球球 Loading效果
 * Codepen: https://codepen.io/janrubio/pen/DusIE
 */
 
@@ -22,7 +22,10 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
+  $base-color: #2c3e50; // 修改小球的颜色
+
   .loader {
+    transform: scale(.6); // 修改大小
     $circle-width: 40px; // circle的长宽
     width: 1px;
     height: 1px;
@@ -46,7 +49,7 @@
         width: 5px;
         height: 5px;
         border-radius: 50%;
-        background: #2c3e50;
+        background: $base-color;
       }
       
       &:nth-child(2) { animation-delay: 240ms; }

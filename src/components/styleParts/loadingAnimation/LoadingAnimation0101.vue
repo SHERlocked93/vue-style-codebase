@@ -1,7 +1,7 @@
 /**
 * 创建于 2018/7/31
 * 作者: QianYu
-* 功能: 加载中动效 LoadingAnimation1
+* 功能: LoadingAnimation0101 音阶波浪 Loading效果
 * Codepen: https://codepen.io/SHERlocked93/pen/YjQQoR
 */
 
@@ -27,7 +27,7 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   .loading-animation {
-    transform: scale(.3);
+    transform: scale(.3); // 修改大小
     $speed: 2.5s;
     $margin-top: 33%;
     position: relative;
