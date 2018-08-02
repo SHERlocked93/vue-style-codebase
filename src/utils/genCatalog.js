@@ -1,20 +1,14 @@
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(function() {
-      return factory
-    })
-  } else if (typeof exports === 'object') {
-    module.exports = factory
-  } else {
-    root.Katelog = factory
-  }
-})(window, function(opts) {
+/**
+ * 生成文章目录
+ * @param opts 配置项
+ */
+export default function(opts) {
   
   let defaultOpts = {
     linkClass: 'cl-link',
     linkActiveClass: 'cl-link-active',
     supplyTop: 0,
-    selector: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    selector: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],   // 按优先级排序
     active: null    // 激活时候回调
   }
   
@@ -72,7 +66,6 @@
   function addClass(node, className) {
     if (!hasClass(node, className)) node.className += " " + className
   }
-  
   
   /**
    *  移除样式
@@ -159,6 +152,10 @@
   function getPriority(tagName) {
     let priority = 0
     if (tagName) {
+      // let lower = tagName.toLowerCase()
+      // if (defaultOpts.selector.includes(lower)) {
+      //   priority = defaultOpts.selector.indexOf(lower) + 1
+      // }
       switch (tagName.toLowerCase()) {
         case 'h1':
           priority = 6
@@ -216,7 +213,7 @@
       for (let i = 0; i < tree.length; i++) {
         if (isEqual(tree[i].parent, _parent)) {
           hasChild = true
-          ul += `<li><div class="${ option.linkClass } cl-level-${ tree[i].level }" data-target="${ tree[i].id }">` + tree[i].name + '</div>'
+          ul += `<li><div class="${ option.linkClass } cl-level-${ tree[i].level }" data-cata-target="${ tree[i].id }">` + tree[i].name + '</div>'
           ul += generateHtmlTree(tree, tree[i])
           ul += '</li>'
         }
@@ -275,7 +272,7 @@
   
   addEvent($catelog, 'click', function(e) {
     let target = e.target || e.srcElement
-    let id = target.getAttribute('data-target')
+    let id = target.getAttribute('data-cata-target')
     if (id) {
       let headEl = document.getElementById(id)
       clickToScroll = true
@@ -288,7 +285,7 @@
    *  设置选中的项
    */
   function setActiveItem(id) {
-    let catelogs = $catelog.querySelectorAll('[data-target]')
+    let catelogs = $catelog.querySelectorAll('[data-cata-target]')
     catelogs = arrayLikeToArray(catelogs)
     let activeTarget = null, c
     
@@ -345,4 +342,4 @@
   
   addEvent(window, 'scroll', resolveScroll)
   
-})
+}
