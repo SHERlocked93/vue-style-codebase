@@ -42,9 +42,8 @@ a:hover {
 }
 
 h2, h3 {
-  cursor: pointer;
   position: relative;
-  margin: 30px 0 20px;
+  margin: 40px 0 25px;
   
   &:before {
     content: '#';
@@ -63,6 +62,7 @@ h2, h3 {
 
 h2 {
   font-size: 1.8em;
+  margin: 40px 0 30px;
 }
 
 h3 {

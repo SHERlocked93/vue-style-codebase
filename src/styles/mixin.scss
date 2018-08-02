@@ -16,7 +16,7 @@ $red-trans: rgba(255, 102, 102, .8);
 $light-grey: #f6f6f6;
 $border-grey: #e3e3e3;
 $hover-bg-grey: rgba(243, 243, 243, .5);
-$box-shadow: rgba(201, 212, 246, 0.50);
+$box-shadow: rgba(96, 96, 96, 0.5);
 
 // 字体库
 $body-font: Source Sans Pro, Helvetica Neue, Arial, sans-serif;
@@ -39,3 +39,15 @@ $content-minwidth: 1000px;
 
 $sidebar-width: 330px;
 
+// 样式块
+@mixin blnWrap {
+  position: fixed;
+  top: 20px + $header-height;
+  right: 20px;
+  color: white;
+  font-size: 21px;
+  [class^="el-icon-my"] {
+    font-size: 20px;
+    margin-top: 2px;
+  }
+}

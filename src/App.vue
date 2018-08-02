@@ -16,7 +16,10 @@
     </div>
     
     <!-- 回顶部 -->
-    <rotating-dashed-border class='back-to-top' :class='{hide: backToTopHide}'></rotating-dashed-border>
+    <rotating-dashed-border class='back-to-top'
+                            :class='{hide: backToTopHide}'
+                            v-show='!isDashboard'></rotating-dashed-border>
+  
   </div>
 </template>
 
@@ -78,8 +81,9 @@
         overflow-y: auto;
         
         .content {
+          padding-top: 1px; // 解决margin合并的情况
+          position: relative;
           margin-top: $header-height;
-          padding-top: 1px; // 解决BFC导致margin合并的情况
           padding-left: $padding;
           padding-right: $padding;
         }
@@ -104,7 +108,7 @@
           left: 0;
           padding: 0;
           overflow: hidden;
-          .content {
+          > .content {
             margin: 0;
             overflow: hidden;
           }

@@ -7,7 +7,6 @@
 
 <template>
   <div class='loading'>
-    
     <h2 id='loading-animation'>Loading Animation</h2>
     
     <!--#01 音阶波浪 Loading效果-->
@@ -134,11 +133,17 @@
           href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
+    
+    <!-- 目录呼吸灯 -->
+    <breathing-light class='bln-wrap'>
+      <i class='el-icon-my-menu'></i>
+    </breathing-light>
   </div>
 </template>
 
 <script type='text/javascript'>
   import DemoBlock from 'local/DemoBlock'
+  import BreathingLight from 'styleParts/BreathingLight'
   import LoadingAnimation0101 from 'styleParts/loadingAnimation/LoadingAnimation0101'
   import LoadingAnimation0102 from 'styleParts/loadingAnimation/LoadingAnimation0102'
   import LoadingAnimation0201 from 'styleParts/loadingAnimation/LoadingAnimation0201'
@@ -159,12 +164,17 @@
       LoadingAnimation0203, LoadingAnimation0204,
       LoadingAnimation0301, LoadingAnimation0302,
       LoadingAnimation0501, LoadingAnimation0502,
-      LoadingAnimation0503, DemoBlock
+      LoadingAnimation0503, BreathingLight, DemoBlock
     }
   }
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
+  @import "~styles/mixin.scss";
+  
   .loading {
+    .bln-wrap {
+      @include blnWrap;
+    }
   }
 </style>
