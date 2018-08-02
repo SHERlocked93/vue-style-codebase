@@ -108,7 +108,7 @@
           left: 0;
           padding: 0;
           overflow: hidden;
-          > .content {
+          .content {
             margin: 0;
             overflow: hidden;
           }

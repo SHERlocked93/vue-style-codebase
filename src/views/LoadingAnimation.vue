@@ -85,6 +85,9 @@
         <demo-box thisName='LoadingAnimation0302'>
           <loading-animation0302></loading-animation0302>
         </demo-box>
+        <demo-box thisName='LoadingAnimation0303'>
+          <loading-animation0303></loading-animation0303>
+        </demo-box>
       </template>
       
       <template slot='realization'>
@@ -152,6 +155,7 @@
   import LoadingAnimation0204 from 'styleParts/loadingAnimation/LoadingAnimation0204'
   import LoadingAnimation0301 from 'styleParts/loadingAnimation/LoadingAnimation0301'
   import LoadingAnimation0302 from 'styleParts/loadingAnimation/LoadingAnimation0302'
+  import LoadingAnimation0303 from 'styleParts/loadingAnimation/LoadingAnimation0303'
   import LoadingAnimation0501 from 'styleParts/loadingAnimation/LoadingAnimation0501'
   import LoadingAnimation0502 from 'styleParts/loadingAnimation/LoadingAnimation0502'
   import LoadingAnimation0503 from 'styleParts/loadingAnimation/LoadingAnimation0503'
@@ -163,6 +167,7 @@
       LoadingAnimation0201, LoadingAnimation0202,
       LoadingAnimation0203, LoadingAnimation0204,
       LoadingAnimation0301, LoadingAnimation0302,
+      LoadingAnimation0303,
       LoadingAnimation0501, LoadingAnimation0502,
       LoadingAnimation0503, BreathingLight, DemoBlock
     }
