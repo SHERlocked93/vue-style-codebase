@@ -9,7 +9,6 @@
   <div class='demo-box demo-box-hook'
        ref='demoBox'
        :data-clipboard-text='thisName'
-       :title='"点击复制组件名："+ thisName'
        :style='{
             width: thisWidth ? thisWidth + "px" : "",
             height: thisWidth ? thisWidth + "px" : ""}'>

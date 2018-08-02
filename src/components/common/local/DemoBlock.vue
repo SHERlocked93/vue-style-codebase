@@ -70,7 +70,7 @@
     margin: $comm-distance 0;
     
     &:hover {
-      box-shadow: 0 0 15px 1px $box-shadow;
+      box-shadow: 0 0 12px 0 $box-shadow;
     }
     
     /* 实例 */
@@ -104,6 +104,7 @@
       text-align: center;
       line-height: 40px;
       cursor: pointer;
+      color: $light;
       
       [class^='el-icon'] {
         margin-right: 10px;
