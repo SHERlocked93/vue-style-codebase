@@ -1,4 +1,4 @@
-![logo](./src/assets/logo green.png)
+![logo](https://github.com/SHERlocked93/vue-style-codebase/blob/master/src/assets/logo%20green.png)
 
 # vue-style-codebase
 

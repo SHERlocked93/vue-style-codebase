@@ -53,6 +53,7 @@
     
     .demo-no {
       visibility: hidden;
+      opacity: 0;
       position: absolute;
       left: 0;
       top: 2px;
@@ -61,7 +62,10 @@
     
     &:hover {
       .demo-no {
+        transition: visibility .6s;
+        transition-delay: 4s;
         visibility: visible;
+        opacity: 1;
       }
     }
   }
