@@ -58,8 +58,7 @@ export default function(opts) {
    * @param catelogs
    */
   function getCatelogsTree(catelogs) {
-    let title, tagName,
-      tree = [], treeItem = {}, parentItem = { id: -1 }, lastTreeItem = null
+    let title, tagName, tree = [], treeItem = {}, parentItem = { id: -1 }, lastTreeItem = null
     
     let id
     
@@ -72,11 +71,11 @@ export default function(opts) {
         name: title,
         tagName: tagName,
         id: id,
-        level: getLevel(tagName),
+        level: +getLevel(tagName),
         parent: parentItem
       }
       if (lastTreeItem) {
-        if (getPriority(treeItem.tagName) < getPriority(lastTreeItem.tagName)) {
+        if (getLevel(treeItem.tagName) > getLevel(lastTreeItem.tagName)) {
           treeItem.parent = lastTreeItem
         } else {
           treeItem.parent = findParent(treeItem, lastTreeItem)
@@ -96,7 +95,7 @@ export default function(opts) {
    */
   function findParent(currTreeItem, lastTreeItem) {
     let lastTreeParent = lastTreeItem.parent
-    while (lastTreeParent && (getPriority(currTreeItem.tagName) >= getPriority(lastTreeParent.tagName))) {
+    while (lastTreeParent && (getLevel(currTreeItem.tagName) <= getLevel(lastTreeParent.tagName))) {
       lastTreeParent = lastTreeParent.parent
     }
     return lastTreeParent || { id: -1 }
@@ -112,23 +111,6 @@ export default function(opts) {
   }
   
   /**
-   *  获取权重
-   * @param tagName h1~h6
-   * @param selector array
-   * @return {number}
-   */
-  function getPriority(tagName, selector = defaultOpts.selector) {
-    let priority = 0
-    if (tagName) {
-      let lower = tagName.toLowerCase()
-      if (selector.includes(lower)) {
-        priority = selector.length - selector.indexOf(lower)
-      }
-    }
-    return priority
-  }
-  
-  /**
    * 生成树
    * @param tree
    * @param _parent
@@ -141,7 +123,7 @@ export default function(opts) {
       for (let i = 0; i < tree.length; i++) {
         if (isEqual(tree[i].parent, _parent)) {
           hasChild = true
-          ul += `<li><div class="${ option.linkClass } cl-level-${ tree[i].level }" ${AttrName}="${ tree[i].id }">` + tree[i].name + '</div>'
+          ul += `<li><div class='${ option.linkClass } cl-level-${ tree[i].level }' ${AttrName}='${ tree[i].id }'><a href='#${tree[i].id}'>${tree[i].name}</a></div>`
           ul += generateHtmlTree(tree, tree[i])
           ul += '</li>'
         }
@@ -149,20 +131,6 @@ export default function(opts) {
       ul += '</ul>'
     }
     return hasChild ? ul : ''
-  }
-  
-  /**
-   * 获取dataset属性
-   * @param el
-   * @param id
-   * @returns {*}
-   */
-  function getDataset(el, id) {
-    if (el.dataset) {
-      return el.dataset[id]
-    } else {
-      return el.getAttribute(`data-${ id }`)
-    }
   }
   
   function isEqual(node, node2) {
@@ -181,20 +149,7 @@ export default function(opts) {
   
   let tree = getCatelogsTree(allCatelogs)
   
-  let clickToScroll = false      // 点击跳转不触发scroll事件
-  
   $catelog.innerHTML = generateHtmlTree(tree, { id: -1 })
-  
-  $catelog.addEventListener('click', function(e) {
-    let target = e.target || e.srcElement
-    let id = target.getAttribute(AttrName)
-    if (id) {
-      let headEl = document.getElementById(id)
-      clickToScroll = true
-      window.scrollTo(0, headEl.offsetTop - option.supplyTop)
-      setActiveItem(id)
-    }
-  })
   
   /**
    *  设置选中的项
@@ -202,36 +157,18 @@ export default function(opts) {
   function setActiveItem(id) {
     let catelogs = $catelog.querySelectorAll(`[${AttrName}]`)
     catelogs = arrayLikeToArray(catelogs)
-    let activeTarget = null, c
     
     for (let i = 0; i < catelogs.length; i++) {
-      c = catelogs[i]
-      let dataSet = c.getAttribute(AttrName)
+      let currDom = catelogs[i]
+      let dataSet = currDom.getAttribute(AttrName)
       if (dataSet === id) {
+        currDom.classList.add(option.linkActiveClass)
         
-        c.classList.add(option.linkActiveClass)
-        
-        activeTarget = c
-        
-        if ($catelog.children[0].offsetHeight > $catelog.offsetHeight) {
-          if (c.offsetTop > $catelog.offsetHeight / 2) {
-            // 距离底部小于容器的一般，不能margin上去了
-            if ($catelog.children[0].offsetHeight - c.offsetTop - c.offsetHeight < $catelog.offsetHeight / 2) {
-              $catelog.children[0].style.marginTop = -$catelog.children[0].offsetHeight + $catelog.offsetHeight + 'px'
-            } else {
-              $catelog.children[0].style.marginTop = ($catelog.offsetHeight / 2) - c.offsetTop + 'px'
-            }
-          } else {
-            $catelog.children[0].style.marginTop = '0px'
-          }
-        }
-        
+        typeof option.active === 'function' &&
+        option.active.call(this, currDom)             // 执行active钩子
       } else {
-        c.classList.remove(option.linkActiveClass)
+        currDom.classList.remove(option.linkActiveClass)
       }
-    }
-    if (typeof option.active === 'function') {
-      option.active.call(this, activeTarget)
     }
   }
   
@@ -240,18 +177,15 @@ export default function(opts) {
    * @param e
    */
   window.addEventListener('scroll', function resolveScroll(e) {
-    if (!clickToScroll) {
-      let scrollTop = getScrollTop() + option.supplyTop
-      let scrollToEl = null
-      for (let i = allCatelogs.length - 1; i >= 0; i--) {
-        if (allCatelogs[i].offsetTop <= scrollTop) {
-          scrollToEl = allCatelogs[i]
-          break
-        }
+    let scrollTop = getScrollTop() + option.supplyTop
+    let scrollToEl = null
+    for (let i = allCatelogs.length - 1; i >= 0; i--) {
+      if (allCatelogs[i].offsetTop <= scrollTop) {
+        scrollToEl = allCatelogs[i]
+        break
       }
-      if (scrollToEl) setActiveItem(scrollToEl.id)
-      else setActiveItem(null)   // 无匹配的元素
     }
-    clickToScroll = false
+    if (scrollToEl) setActiveItem(scrollToEl.id)
+    else setActiveItem(null)   // 无匹配的元素
   })
 }

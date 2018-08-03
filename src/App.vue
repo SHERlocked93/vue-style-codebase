@@ -77,11 +77,11 @@
         position: fixed;
         overflow-x: hidden;
         overflow-y: auto;
+        margin-top: $header-height;
         
         .content {
           padding-top: 1px; // 解决margin合并的情况
           position: relative;
-          margin-top: $header-height;
           padding-left: $padding;
           padding-right: $padding;
         }
