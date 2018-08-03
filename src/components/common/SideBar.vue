@@ -9,6 +9,7 @@
     <el-scrollbar>
       <div class='sidebar-item' v-for='route in routesArrayFilted' :key='route.name'>
         <router-link :to='route.path'>{{route.name}}</router-link>
+        <div :id='"catalog-content-"+ route.component.name'></div>
       </div>
     </el-scrollbar>
   </div>
@@ -49,7 +50,7 @@
       /* 单个链接 */
       .sidebar-item {
         $this-height: 30px;
-        height: $this-height;
+        min-height: $this-height;
         line-height: $this-height;
         padding: 0 40px 0 30px;
         transition: background-color .5s;

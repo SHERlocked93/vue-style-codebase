@@ -6,8 +6,8 @@
 
 
 <template>
-  <div class='loading'>
-    <h2 id='loading-animation'>Loading Animation</h2>
+  <div class='loading' id='loading-animation'>
+    <h2 id='artical-content'>Loading Animation</h2>
     
     <!--#01 音阶波浪 Loading效果-->
     <h3>音阶波浪 Loading效果</h3>
@@ -75,6 +75,14 @@
       </template>
     </demo-block>
     
+    <h2>呵呵呵</h2>
+    <h2>呵呵呵</h2>
+    <h2>呵呵呵</h2>
+    <h2>呵呵呵</h2>
+    <h2>呵呵呵</h2>
+    <h2>呵呵呵</h2>
+    <h2>呵呵呵</h2>
+    <h2>呵呵呵</h2>
     <!--#03 环形 Loading效果-->
     <h3>环形 Loading效果</h3>
     <demo-block>
@@ -96,6 +104,8 @@
           href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
+  
+    <h2>呵呵呵</h2>
     
     <!--#04 丝带 Loading效果-->
     <h3>丝带 Loading效果</h3>
@@ -137,6 +147,8 @@
       </template>
     </demo-block>
     
+    <h2>呵呵呵</h2>
+    
     <!-- 目录呼吸灯 -->
     <breathing-light class='bln-wrap'>
       <i class='el-icon-my-menu'></i>
@@ -159,6 +171,7 @@
   import LoadingAnimation0501 from 'styleParts/loadingAnimation/LoadingAnimation0501'
   import LoadingAnimation0502 from 'styleParts/loadingAnimation/LoadingAnimation0502'
   import LoadingAnimation0503 from 'styleParts/loadingAnimation/LoadingAnimation0503'
+  import Catalog from 'utils/genCatalog'
   
   export default {
     name: 'LoadingAnimation',
@@ -170,6 +183,14 @@
       LoadingAnimation0303,
       LoadingAnimation0501, LoadingAnimation0502,
       LoadingAnimation0503, BreathingLight, DemoBlock
+    },
+    mounted() {
+      new Catalog({
+        contentEl: 'loading-animation',
+        catelogEl: `catalog-content-${this.$options.name}`,
+        supplyTop: 10,
+        selector: ['h2', 'h3']
+      })
     }
   }
 </script>

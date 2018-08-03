@@ -7,6 +7,7 @@ import 'normalize.css/normalize.css'
 import 'styles/index.scss'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'styles/element-ui.scss'
+import 'styles/scrollbar.scss'
 import 'assets/icon/iconfont.css'
 import 'utils/codepenEmbed.js'
 

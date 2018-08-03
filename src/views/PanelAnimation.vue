@@ -6,8 +6,8 @@
 
 
 <template>
-  <div class='panel'>
-    <h2 id='panel-animation'><a href='#panel-animation'>Panel Animation</a></h2>
+  <div class='panel' id='panel-animation'>
+    <h2>Panel Animation</h2>
   </div>
 </template>
 

@@ -5,13 +5,13 @@
 export default function(opts) {
   
   let defaultOpts = {
-    linkClass: 'cl-link',
-    linkActiveClass: 'cl-link-active',
+    linkClass: 'cl-link',                             // 所有目录项都有的类
+    linkActiveClass: 'cl-link-active',                // active的目录项
+    catelogAttrName: 'data-cata-target',              // 目录项DOM的attribute存放对应目录的id
     supplyTop: 0,
     selector: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],   // 按优先级排序
-    active: null    // 激活时候回调
+    active: null                                      // 激活时候回调
   }
-  
   
   if (typeof Object.assign !== 'function') {
     // Must be writable: true, enumerable: false, configurable: true
@@ -43,49 +43,15 @@ export default function(opts) {
     })
   }
   
-  /**
-   * 判断是否有class
-   * @param node  节点
-   * @param className 样式名
-   * @returns {*}
-   */
-  function hasClass(node, className) {
-    if (node.className) {
-      return node.className.match(
-        new RegExp('(\\s|^)' + className + '(\\s|$)'))
-    } else {
-      return false
-    }
-  }
-  
-  /**
-   *  添加样式
-   * @param node  节点
-   * @param className 样式名
-   */
-  function addClass(node, className) {
-    if (!hasClass(node, className)) node.className += " " + className
-  }
-  
-  /**
-   *  移除样式
-   * @param node  节点
-   * @param className 将移除的样式
-   */
-  function removeClass(node, className) {
-    if (hasClass(node, className)) {
-      const reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
-      node.className = node.className.replace(reg, ' ')
-    }
-  }
-  
   function arrayLikeToArray(al) {
     return Array.prototype.slice.call(al)
   }
   
   const option = Object.assign({}, defaultOpts, opts)
   const $content = document.getElementById(option.contentEl)      // 内容元素
-  const $catelog = document.getElementById(option.catelogEl)     // 目录元素
+  const $catelog = document.getElementById(option.catelogEl)      // 目录元素
+  
+  const { AttrName } = option
   
   /**
    * 获取目录树
@@ -136,7 +102,6 @@ export default function(opts) {
     return lastTreeParent || { id: -1 }
   }
   
-  
   /**
    *  获取等级
    * @param tagName
@@ -148,56 +113,19 @@ export default function(opts) {
   
   /**
    *  获取权重
+   * @param tagName h1~h6
+   * @param selector array
+   * @return {number}
    */
-  function getPriority(tagName) {
+  function getPriority(tagName, selector = defaultOpts.selector) {
     let priority = 0
     if (tagName) {
-      // let lower = tagName.toLowerCase()
-      // if (defaultOpts.selector.includes(lower)) {
-      //   priority = defaultOpts.selector.indexOf(lower) + 1
-      // }
-      switch (tagName.toLowerCase()) {
-        case 'h1':
-          priority = 6
-          break
-        case 'h2':
-          priority = 5
-          break
-        case 'h3':
-          priority = 4
-          break
-        case 'h4':
-          priority = 3
-          break
-        case 'h5':
-          priority = 2
-          break
-        case 'h6':
-          priority = 1
-          break
+      let lower = tagName.toLowerCase()
+      if (selector.includes(lower)) {
+        priority = selector.length - selector.indexOf(lower)
       }
     }
     return priority
-  }
-  
-  /**
-   * 绑定事件
-   * @param obj
-   * @param type
-   * @param fn
-   */
-  function addEvent(obj, type, fn) {
-    if (obj) {
-      if (obj.attachEvent) {
-        obj['e' + type + fn] = fn
-        obj[type + fn] = function() {
-          obj['e' + type + fn](window.event)
-        }
-        obj.attachEvent('on' + type, obj[type + fn])
-      } else {
-        obj.addEventListener(type, fn, false)
-      }
-    }
   }
   
   /**
@@ -213,7 +141,7 @@ export default function(opts) {
       for (let i = 0; i < tree.length; i++) {
         if (isEqual(tree[i].parent, _parent)) {
           hasChild = true
-          ul += `<li><div class="${ option.linkClass } cl-level-${ tree[i].level }" data-cata-target="${ tree[i].id }">` + tree[i].name + '</div>'
+          ul += `<li><div class="${ option.linkClass } cl-level-${ tree[i].level }" ${AttrName}="${ tree[i].id }">` + tree[i].name + '</div>'
           ul += generateHtmlTree(tree, tree[i])
           ul += '</li>'
         }
@@ -257,22 +185,9 @@ export default function(opts) {
   
   $catelog.innerHTML = generateHtmlTree(tree, { id: -1 })
   
-  let styleText = `
-        .cl-list { overflow: hidden !important; }
-        .cl-list > ul { position: relative; }
-    `
-  let styleNode = document.createElement('style')
-  styleNode.type = 'text/css'
-  if (styleNode.styleSheet) {
-    styleNode.styleSheet.cssText = styleText
-  } else {
-    styleNode.innerHTML = styleText
-  }
-  document.getElementsByTagName('head')[0].appendChild(styleNode)
-  
-  addEvent($catelog, 'click', function(e) {
+  $catelog.addEventListener('click', function(e) {
     let target = e.target || e.srcElement
-    let id = target.getAttribute('data-cata-target')
+    let id = target.getAttribute(AttrName)
     if (id) {
       let headEl = document.getElementById(id)
       clickToScroll = true
@@ -285,15 +200,16 @@ export default function(opts) {
    *  设置选中的项
    */
   function setActiveItem(id) {
-    let catelogs = $catelog.querySelectorAll('[data-cata-target]')
+    let catelogs = $catelog.querySelectorAll(`[${AttrName}]`)
     catelogs = arrayLikeToArray(catelogs)
     let activeTarget = null, c
     
     for (let i = 0; i < catelogs.length; i++) {
       c = catelogs[i]
-      if (getDataset(c, 'target') === id) {
+      let dataSet = c.getAttribute(AttrName)
+      if (dataSet === id) {
         
-        addClass(c, option.linkActiveClass)
+        c.classList.add(option.linkActiveClass)
         
         activeTarget = c
         
@@ -311,7 +227,7 @@ export default function(opts) {
         }
         
       } else {
-        removeClass(c, option.linkActiveClass)
+        c.classList.remove(option.linkActiveClass)
       }
     }
     if (typeof option.active === 'function') {
@@ -323,8 +239,7 @@ export default function(opts) {
    * 滚动处理事件
    * @param e
    */
-  function resolveScroll(e) {
-    // 鼠标滚动则触发，点击滚动不触发
+  window.addEventListener('scroll', function resolveScroll(e) {
     if (!clickToScroll) {
       let scrollTop = getScrollTop() + option.supplyTop
       let scrollToEl = null
@@ -338,8 +253,5 @@ export default function(opts) {
       else setActiveItem(null)   // 无匹配的元素
     }
     clickToScroll = false
-  }
-  
-  addEvent(window, 'scroll', resolveScroll)
-  
+  })
 }

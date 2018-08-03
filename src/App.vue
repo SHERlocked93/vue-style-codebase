@@ -8,10 +8,8 @@
       <side-bar class='sidebar-wrapper'></side-bar>
       
       <!-- 内容区 -->
-      <main class='content-wrapper'>
-        <el-scrollbar ref='scrollbar'>
-          <router-view class='content'></router-view>
-        </el-scrollbar>
+      <main class='content-wrapper' ref='scrollWrapper'>
+        <router-view class='content'></router-view>
       </main>
     </div>
     
@@ -44,13 +42,13 @@
       }
     },
     mounted() {
-      const scrollbarWrapper = this.$refs.scrollbar.$refs.wrap
+      const scrollbarWrapper = this.$refs.scrollWrapper
       
       EventBus.scrollbarWrapper = scrollbarWrapper
       EventBus.$on('App.contentScrollbar.backToTop', () => scrollbarWrapper && (scrollbarWrapper.scrollTop = 0))
       scrollbarWrapper.addEventListener('scroll', _.throttle(() =>
           this.backToTopHide = scrollbarWrapper.scrollTop < 100
-        , 250))
+        , 500))
     }
   }
 </script>
