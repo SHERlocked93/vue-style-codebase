@@ -23,10 +23,11 @@
     name: 'RotatingDashedBorder',
     methods: {
       /**
-       * 移动到顶部
+       * 平滑移动到顶部
        */
       scrollToTop() {
-        EventBus.$emit('App.contentScrollbar.backToTop')
+        document.querySelector('#heading-0')
+          .scrollIntoView({ behavior: "smooth", block: "end" })
       }
     }
   }
@@ -42,6 +43,7 @@
     height: $width;
     overflow: hidden;
     color: $medium;
+    display: block;
     
     &:hover {
       cursor: pointer;

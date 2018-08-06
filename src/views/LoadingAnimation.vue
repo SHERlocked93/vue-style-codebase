@@ -104,7 +104,7 @@
           href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
-  
+    
     <h2>呵呵呵</h2>
     
     <!--#04 丝带 Loading效果-->
@@ -148,11 +148,6 @@
     </demo-block>
     
     <h2>呵呵呵</h2>
-    
-    <!-- 目录呼吸灯 -->
-    <breathing-light class='bln-wrap'>
-      <i class='el-icon-my-menu'></i>
-    </breathing-light>
   </div>
 </template>
 
@@ -182,13 +177,13 @@
       LoadingAnimation0301, LoadingAnimation0302,
       LoadingAnimation0303,
       LoadingAnimation0501, LoadingAnimation0502,
-      LoadingAnimation0503, BreathingLight, DemoBlock
+      LoadingAnimation0503, DemoBlock
     },
     mounted() {
       new Catalog({
         contentEl: 'loading-animation',
         catelogEl: `catalog-content-${this.$options.name}`,
-        supplyTop: 10,
+        supplyTop: 100,
         selector: ['h2', 'h3']
       })
     }
@@ -199,8 +194,5 @@
   @import "~styles/mixin.scss";
   
   .loading {
-    .bln-wrap {
-      @include blnWrap;
-    }
   }
 </style>

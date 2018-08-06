@@ -45,7 +45,6 @@
       const scrollbarWrapper = this.$refs.scrollWrapper
       
       EventBus.scrollbarWrapper = scrollbarWrapper
-      EventBus.$on('App.contentScrollbar.backToTop', () => scrollbarWrapper && (scrollbarWrapper.scrollTop = 0))
       scrollbarWrapper.addEventListener('scroll', _.throttle(() =>
           this.backToTopHide = scrollbarWrapper.scrollTop < 100
         , 500))
@@ -68,8 +67,8 @@
       /* 内容区 */
       .content-wrapper {
         $padding: 40px;
-        height: 100%;
         width: 100%;
+        height: calc(100% - #{$header-height});
         left: 0;
         padding-left: $sidebar-width;
         border-right: $padding lightblue;
@@ -105,6 +104,8 @@
         .content-wrapper {
           left: 0;
           padding: 0;
+          margin: 0;
+          height: 100%;
           overflow: hidden;
           .content {
             margin: 0;
