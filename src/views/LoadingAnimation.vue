@@ -183,7 +183,7 @@
       new Catalog({
         contentEl: 'loading-animation',
         catelogEl: `catalog-content-${this.$options.name}`,
-        supplyTop: 100,
+        supplyTop: 90,
         selector: ['h2', 'h3']
       })
     }

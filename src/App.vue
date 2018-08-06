@@ -23,7 +23,6 @@
 
 <script>
   import _ from 'lodash'
-  import EventBus from 'utils/eventBus'
   import HeaderNav from 'common/HeaderNav'
   import SideBar from 'common/SideBar'
   import RotatingDashedBorder from 'styleParts/RotatingDashedBorder'
@@ -44,7 +43,6 @@
     mounted() {
       const scrollbarWrapper = this.$refs.scrollWrapper
       
-      EventBus.scrollbarWrapper = scrollbarWrapper
       scrollbarWrapper.addEventListener('scroll', _.throttle(() =>
           this.backToTopHide = scrollbarWrapper.scrollTop < 100
         , 500))

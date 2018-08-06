@@ -6,10 +6,6 @@
 
 import Vue from 'vue'
 
-const EventBus = new Vue({
-  data: {
-    scrollbarWrapper: null      // 存放首页的content scroll的Dom
-  }
-})
+const EventBus = new Vue()
 
 export default EventBus

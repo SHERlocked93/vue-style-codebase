@@ -55,9 +55,9 @@
         padding: 0 40px 0 30px;
         transition: background-color .5s;
         
-        &:hover {
+        /*&:hover {
           background-color: $hover-bg-grey;
-        }
+        }*/
         
         &:hover, & .router-link-active {
           color: $green;

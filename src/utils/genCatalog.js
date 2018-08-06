@@ -3,26 +3,49 @@
  * @param opts 配置项
  */
 export default function(opts) {
-  
   let defaultOpts = {
     linkClass: 'cl-link',                             // 所有目录项都有的类
     linkActiveClass: 'cl-link-active',                // active的目录项
-    AttrName: 'data-cata-target',                     // 目录项DOM的attribute存放对应目录的id
+    datasetName: 'data-cata-target',                  // 目录项DOM的attribute存放对应目录的id
     supplyTop: 0,                                     // 第一个内容元素的高度补偿
     selector: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],   // 按优先级排序
     active: null                                      // 激活时候回调
   }
   
-  const option = Object.assign({}, defaultOpts, opts)
-  const { AttrName } = option
+  const Opt = Object.assign({}, defaultOpts, opts)
   
-  const $content = document.getElementById(option.contentEl)      // 内容元素
-  const $content_parent = $content.parentNode || document.body    // 内容元素的父元素
-  const $catelog = document.getElementById(option.catelogEl)      // 目录元素
+  const $content = document.getElementById(Opt.contentEl)        // 内容元素
+  const $content_parent = $content.parentNode || document.body   // 内容元素的父元素
+  const $catelog = document.getElementById(Opt.catelogEl)        // 目录元素
   
-  let allCatelogs = $content.querySelectorAll(option.selector.join())
+  let allCatelogs = $content.querySelectorAll(Opt.selector.join())
   let tree = getCatelogsTree(allCatelogs)
   $catelog.innerHTML = generateHtmlTree(tree, { id: -1 })
+  
+  /**
+   * 滚动处理事件
+   * @param e
+   */
+  $content_parent.addEventListener('scroll', function resolveScroll(el) {
+    let scrollTop = $content_parent.scrollTop + Opt.supplyTop
+    let scrollToEl = null
+    for (let i = allCatelogs.length - 1; i >= 0; i--) {
+      if (allCatelogs[i].offsetTop <= scrollTop) {
+        scrollToEl = allCatelogs[i]
+        break
+      }
+    }
+    if (scrollToEl) setActiveItem(scrollToEl.id)
+    else setActiveItem(null)            // 无匹配的元素
+  })
+  
+  /* 点击事件 */
+  $catelog.addEventListener('click', function({ target }) {
+    const datasetId = target.getAttribute(Opt.datasetName)
+    target.classList.contains(Opt.linkClass) &&
+    document.getElementById(datasetId)
+      .scrollIntoView({ behavior: "smooth", block: "start" })
+  })
   
   /**
    * 获取目录树，生成类似于Vnode的树
@@ -92,7 +115,7 @@ export default function(opts) {
       for (let i = 0; i < tree.length; i++) {
         if (isEqual(tree[i].parent, _parent)) {
           hasChild = true
-          ul += `<li><div class='${ option.linkClass } cl-level-${ tree[i].level }' ${AttrName}='${ tree[i].id }'><a href='#${tree[i].id}'>${tree[i].name}</a></div>`
+          ul += `<li><div class='${ Opt.linkClass } cl-level-${ tree[i].level }' ${Opt.datasetName}='${ tree[i].id }'>${tree[i].name}</div>`
           ul += generateHtmlTree(tree, tree[i])
           ul += '</li>'
         }
@@ -110,35 +133,16 @@ export default function(opts) {
    *  设置选中的项
    */
   function setActiveItem(id) {
-    let catas = [...$catelog.querySelectorAll(`[${AttrName}]`)]
+    let catas = [...$catelog.querySelectorAll(`[${Opt.datasetName}]`)]
     
     catas.forEach(T => {
-      if (T.getAttribute(AttrName) === id) {
-        T.classList.add(option.linkActiveClass)
-        typeof option.active === 'function' &&
-        option.active.call(this, T)                // 执行active钩子
+      if (T.getAttribute(Opt.datasetName) === id) {
+        T.classList.add(Opt.linkActiveClass)
+        typeof Opt.active === 'function' &&
+        Opt.active.call(this, T)                    // 执行active钩子
       } else {
-        T.classList.remove(option.linkActiveClass)
+        T.classList.remove(Opt.linkActiveClass)
       }
     })
   }
-  
-  /**
-   * 滚动处理事件
-   * @param e
-   */
-  $content_parent.addEventListener('scroll', function resolveScroll(e) {
-    let scrollTop = $content_parent.scrollTop + option.supplyTop
-    let scrollToEl = null
-    for (let i = allCatelogs.length - 1; i >= 0; i--) {
-      let ii = allCatelogs[i]
-      let offsetT = allCatelogs[i].offsetTop
-      if (offsetT <= scrollTop) {
-        scrollToEl = allCatelogs[i]
-        break
-      }
-    }
-    if (scrollToEl) setActiveItem(scrollToEl.id)
-    else setActiveItem(null)            // 无匹配的元素
-  })
 }
