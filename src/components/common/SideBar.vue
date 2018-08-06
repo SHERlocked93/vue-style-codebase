@@ -55,16 +55,22 @@
         padding: 0 40px 0 30px;
         transition: background-color .5s;
         
-        /*&:hover {
-          background-color: $hover-bg-grey;
-        }*/
-        
-        &:hover, & .router-link-active {
+        & .router-link-active {
           color: $green;
         }
         
         &:first-of-type {
           margin-top: 20px;
+        }
+        
+        /deep/ {
+          .cl-link {
+            cursor: pointer;
+          }
+          
+          .cl-link-active {
+            color: $red;
+          }
         }
       }
     }

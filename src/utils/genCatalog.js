@@ -7,7 +7,6 @@ export default function(opts) {
     linkClass: 'cl-link',                             // 所有目录项都有的类
     linkActiveClass: 'cl-link-active',                // active的目录项
     datasetName: 'data-cata-target',                  // 目录项DOM的attribute存放对应目录的id
-    supplyTop: 0,                                     // 第一个内容元素的高度补偿
     selector: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],   // 按优先级排序
     active: null                                      // 激活时候回调
   }
@@ -27,10 +26,9 @@ export default function(opts) {
    * @param e
    */
   $content_parent.addEventListener('scroll', function resolveScroll(el) {
-    let scrollTop = $content_parent.scrollTop + Opt.supplyTop
     let scrollToEl = null
     for (let i = allCatelogs.length - 1; i >= 0; i--) {
-      if (allCatelogs[i].offsetTop <= scrollTop) {
+      if (allCatelogs[i].offsetTop <= $content_parent.scrollTop) {
         scrollToEl = allCatelogs[i]
         break
       }

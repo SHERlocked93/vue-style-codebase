@@ -70,7 +70,8 @@
     margin: $comm-distance 0;
     
     &:hover {
-      box-shadow: 0 0 12px 0 $box-shadow;
+      border: 1px solid $border-grey;
+      /*box-shadow: 0 0 2px 0 $box-shadow;*/
     }
     
     /* 实例 */

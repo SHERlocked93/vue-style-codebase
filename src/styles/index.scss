@@ -80,10 +80,11 @@ code {
   border-radius: 4px;
 }
 
-.cl-link {
-  cursor: pointer;
+ul, li {
+  $padding-start: 13px;
+  margin: 0;
+  -moz-padding-start: $padding-start;
+  -webkit-padding-start: $padding-start;
+  list-style: none;
 }
 
-.cl-link-active {
-  color: $red;
-}
