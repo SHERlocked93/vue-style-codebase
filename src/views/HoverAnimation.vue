@@ -6,16 +6,25 @@
 
 
 <template>
-  <div class='hover'>
-    <h2 id='hover-animation'><a href='#hover-animation'>Hover Animation</a></h2>
+  <div class='hover' id='hover-animation'>
+    <h2>Hover Animation</h2>
   </div>
 </template>
 
 <script type='text/javascript'>
+  import Catalog from 'utils/genCatalog'
+  
   export default {
     name: 'HoverAnimation',
     data() {
       return {}
+    },
+    mounted() {
+      new Catalog({
+        contentEl: 'hover-animation',
+        catelogEl: `catalog-content-${this.$options.name}`,
+        selector: ['h2', 'h3']
+      })
     }
   }
 </script>

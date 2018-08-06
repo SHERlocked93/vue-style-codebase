@@ -8,8 +8,9 @@
   <div class='sidebar'>
     <el-scrollbar>
       <div class='sidebar-item' v-for='route in routesArrayFilted' :key='route.name'>
-        <router-link :to='route.path'>{{route.name}}</router-link>
-        <div :id='"catalog-content-"+ route.component.name'></div>
+        <router-link :to='route.path' class='router-link'>{{route.name}}</router-link>
+        <div :id='"catalog-content-"+ route.component.name'
+             v-show='$route.path.slice(1).toLowerCase() === route.component.name.toLowerCase()'></div>
       </div>
     </el-scrollbar>
   </div>
@@ -54,6 +55,14 @@
         line-height: $this-height;
         padding: 0 40px 0 30px;
         transition: background-color .5s;
+        color: $grey;
+        font-size: 15px;
+        margin: 3px 0;
+        
+        .router-link {
+          &:hover {
+          }
+        }
         
         & .router-link-active {
           color: $green;
@@ -66,10 +75,12 @@
         /deep/ {
           .cl-link {
             cursor: pointer;
+            color: $medium;
+            font-size: 13px;
           }
           
           .cl-link-active {
-            color: $red;
+            color: $green;
           }
         }
       }
