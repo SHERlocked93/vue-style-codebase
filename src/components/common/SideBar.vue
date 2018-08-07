@@ -85,19 +85,19 @@
             }
             
             li.visible > .cl-link {
-              color: #111;
-              transform: translate(5px);
+              color: rgba(66, 185, 131, .9);
+              transform: translate(3px);
             }
             
             .cl-link {
               cursor: pointer;
-              color: rgba(52, 73, 94, .6);
+              color: rgba(52, 73, 94, .5);
               font-size: 13px;
               transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
             }
             
             .cl-link-active {
-              color: $green;
+              color: rgba(66, 185, 131, .9);
             }
             
             .cl-marker {

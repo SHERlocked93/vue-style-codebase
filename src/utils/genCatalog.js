@@ -20,14 +20,17 @@ export default function(opts) {
   
   let allCatelogs = $content.querySelectorAll(Opt.selector.join())
   let tree = getCatelogsTree(allCatelogs)
-  $catelog.innerHTML = generateHtmlTree(tree, { id: -1 })
+  
+  $catelog.innerHTML = `<div class='cl-wrapper'>${generateHtmlTree(tree, { id: -1 })}<svg class="cl-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="#42B983" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+            </svg></div>`
   
   const tocPath = document.querySelector('.cl-marker path')
   let tocItems
   
   // Factor of screen size that the element must cross
   // before it's considered visible
-  const TOP_MARGIN = 0.1,
+  const TOP_MARGIN = 0.05,
     BOTTOM_MARGIN = 0
   
   let pathLength        // 左边svg-path长度
@@ -37,6 +40,9 @@ export default function(opts) {
   
   drawPath()
   
+  /**
+   * 画出svg路径
+   */
   function drawPath() {
     tocItems = [...$catelog.querySelectorAll('li')]
     // Cache element references and measurements
@@ -109,7 +115,6 @@ export default function(opts) {
       tocPath.setAttribute('opacity', '0')
     }
   }
-  
   
   /**
    * 滚动处理事件
@@ -199,18 +204,16 @@ export default function(opts) {
   function generateHtmlTree(tree, _parent) {
     let ul, hasChild = false
     if (tree) {
-      ul = `<div class='cl-wrapper'><ul>`
+      ul = `<ul>`
       for (let i = 0; i < tree.length; i++) {
         if (isEqual(tree[i].parent, _parent)) {
           hasChild = true
-          ul += `<li><a class='${ Opt.linkClass } cl-level-${ tree[i].level }' ${Opt.datasetName}='${ tree[i].id }'>${tree[i].name}</a>`
+          ul += `<li><div class='${ Opt.linkClass } cl-level-${ tree[i].level }' ${Opt.datasetName}='${ tree[i].id }'>${tree[i].name}</div>`
           ul += generateHtmlTree(tree, tree[i])
           ul += '</li>'
         }
       }
-      ul += `</ul><svg class="cl-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-            <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
-            </svg></div>`
+      ul += `</ul>`
     }
     return hasChild ? ul : ''
   }
