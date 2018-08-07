@@ -55,7 +55,7 @@
         line-height: $this-height;
         padding: 0 40px 0 30px;
         transition: background-color .5s;
-        color: $grey;
+        color: $medium;
         font-size: 15px;
         margin: 3px 0;
         
@@ -73,14 +73,45 @@
         }
         
         /deep/ {
-          .cl-link {
-            cursor: pointer;
-            color: $medium;
-            font-size: 13px;
-          }
-          
-          .cl-link-active {
-            color: $green;
+          .cl-wrapper {
+            position: relative;
+            
+            ul, li {
+              $padding-start: 12px;
+              margin: 0;
+              -moz-padding-start: $padding-start;
+              -webkit-padding-start: $padding-start;
+              list-style: none;
+            }
+            
+            li.visible > .cl-link {
+              color: #111;
+              transform: translate(5px);
+            }
+            
+            .cl-link {
+              cursor: pointer;
+              color: rgba(52, 73, 94, .6);
+              font-size: 13px;
+              transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+            }
+            
+            .cl-link-active {
+              color: $green;
+            }
+            
+            .cl-marker {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: -1;
+              
+              path {
+                transition: all 0.3s ease;
+              }
+            }
           }
         }
       }
