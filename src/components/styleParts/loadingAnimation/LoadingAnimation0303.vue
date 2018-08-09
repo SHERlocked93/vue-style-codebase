@@ -16,18 +16,7 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-  $base-color: #34495e; // 修改部分环颜色1
-  
-  @keyframes loading {
-    0% {
-      transform-origin: 100% 100%;
-      transform: rotate(0deg);
-    }
-    100% {
-      transform-origin: 100% 100%;
-      transform: rotate(360deg);
-    }
-  }
+  $base-color: rgba(66, 185, 131, .8); // 修改部分环颜色1
   
   .loading-circle {
     transform: scale(.5); // 修改大小
@@ -74,6 +63,17 @@
       border-radius: 200px 0 0 0;
       background: linear-gradient(45deg, transparent 0%, $base-color 50%, $base-color 100%);
       animation: loading .9s linear infinite;
+    }
+    
+    @keyframes loading {
+      0% {
+        transform-origin: 100% 100%;
+        transform: rotate(0deg);
+      }
+      100% {
+        transform-origin: 100% 100%;
+        transform: rotate(360deg);
+      }
     }
   }
 

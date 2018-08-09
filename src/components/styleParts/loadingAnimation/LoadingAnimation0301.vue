@@ -16,8 +16,8 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-  $base-color1: #323232; // 修改颜色1
-  $base-color2: #b6b6b6; // 修改颜色2
+  $base-color1: rgba(66, 185, 131, .8); // 修改颜色1
+  $base-color2: rgba(66, 185, 131, .2); // 修改颜色2
   $width: 35px; // 修改大小
   
   .loading-circle {

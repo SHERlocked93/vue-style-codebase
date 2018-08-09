@@ -20,7 +20,7 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   .loading-animation2 {
-    $base-color: #2c3e50; // 修改小球的颜色
+    $base-color: rgba(66, 185, 131, .8); // 修改小球的颜色
     $anim-duration: .6s;
     $dot-size: 30px;
     transform: scale(.6); // 修改大小

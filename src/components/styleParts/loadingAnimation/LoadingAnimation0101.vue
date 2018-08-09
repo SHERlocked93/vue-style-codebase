@@ -26,6 +26,8 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
+  $base-color: rgba(66, 185, 131, .8); // 修改主颜色
+  
   .loading-animation {
     transform: scale(.3); // 修改大小
     $speed: 2.5s;
@@ -37,7 +39,6 @@
     height: 100px;
     span {
       display: block;
-      background: #ccc;
       width: 4px;
       height: 10%;
       border-radius: 10px;
@@ -61,7 +62,7 @@
         height: 10%;
       }
       50% {
-        background: #2c3e50;
+        background: $base-color;
         height: 100%;
         margin-top: 0;
       }

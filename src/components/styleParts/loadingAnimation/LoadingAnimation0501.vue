@@ -21,7 +21,7 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   $bubble-size: 10px;
-  $base-color: #2c3e50; // 修改小球的颜色
+  $base-color: rgba(66, 185, 131, .8); // 修改小球的颜色
   
   .loading-slide {
     transform: scale(.8); // 修改大小

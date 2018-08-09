@@ -16,7 +16,7 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-  $base-color1: #323232; // 修改部分环颜色1
+  $base-color1: rgba(66, 185, 131, .8); // 修改部分环颜色1
   $base-color2: transparent; // 修改全环颜色2
   $width: 35px; // 修改大小
   

@@ -31,7 +31,7 @@
   $spinning-bubble-transform-origin: ($spinnin-bubble-translate - 50%) * -1;
   $spoke-translate: 100%;
   $spoke-transform-origin: ($spoke-translate) * -1;
-  $base-color: #2c3e50; // 修改小球的颜色
+  $base-color: rgba(66, 185, 131, .8); // 修改小球的颜色
   
   .loading-bubbles {
     transform: scale(.6); // 修改大小
