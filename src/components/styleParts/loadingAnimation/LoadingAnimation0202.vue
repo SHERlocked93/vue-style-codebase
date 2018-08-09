@@ -6,7 +6,7 @@
 */
 
 <template>
-  <div class='loader'>
+  <div class='loading-animation0202'>
     <div class='circle'></div>
     <div class='circle'></div>
     <div class='circle'></div>
@@ -24,7 +24,7 @@
 <style rel="stylesheet/scss" lang="scss" scoped>
   $base-color: rgba(66, 185, 131, .8); // 修改小球的颜色
 
-  .loader {
+  .loading-animation0202 {
     transform: scale(.6); // 修改大小
     $circle-width: 40px; // circle的长宽
     width: 1px;
