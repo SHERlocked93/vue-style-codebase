@@ -9,6 +9,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'styles/element-ui.scss'
 import 'styles/scrollbar.scss'
 import 'assets/icon/iconfont.css'
+import 'progress-catalog/src/progress-catalog.css'
 import 'utils/codepenEmbed.js'
 
 import 'local/componentRegister.js'

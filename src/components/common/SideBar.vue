@@ -71,49 +71,6 @@
         &:first-of-type {
           margin-top: 20px;
         }
-        
-        /deep/ {
-          .cl-wrapper {
-            position: relative;
-            
-            ul, li {
-              $padding-start: 12px;
-              margin: 0;
-              -moz-padding-start: $padding-start;
-              -webkit-padding-start: $padding-start;
-              list-style: none;
-            }
-            
-            li.visible > .cl-link {
-              color: rgba(66, 185, 131, .9);
-              transform: translate(3px);
-            }
-            
-            .cl-link {
-              cursor: pointer;
-              color: rgba(52, 73, 94, .5);
-              font-size: 13px;
-              transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
-            }
-            
-            .cl-link-active {
-              color: rgba(66, 185, 131, .9);
-            }
-            
-            .cl-marker {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              z-index: -1;
-              
-              path {
-                transition: all 0.3s ease;
-              }
-            }
-          }
-        }
       }
     }
   }

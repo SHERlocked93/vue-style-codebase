@@ -176,7 +176,7 @@
   import LoadingAnimation0501 from 'styleParts/loadingAnimation/LoadingAnimation0501'
   import LoadingAnimation0502 from 'styleParts/loadingAnimation/LoadingAnimation0502'
   import LoadingAnimation0503 from 'styleParts/loadingAnimation/LoadingAnimation0503'
-  import Catalog from 'utils/genCatalog'
+  import Catalog from 'progress-catalog'
   
   export default {
     name: 'LoadingAnimation',
@@ -192,7 +192,7 @@
     mounted() {
       new Catalog({
         contentEl: 'loading-animation',
-        catelogEl: `catalog-content-${this.$options.name}`,
+        catalogEl: `catalog-content-${this.$options.name}`,
         selector: ['h2', 'h3']
       })
     }

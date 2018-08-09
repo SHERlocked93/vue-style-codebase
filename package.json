@@ -17,6 +17,7 @@
     "element-ui": "^2.4.4",
     "lodash": "^4.17.10",
     "normalize.css": "^8.0.0",
+    "progress-catalog": "^1.0.4",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },
@@ -56,9 +57,7 @@
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
-    "vue": "^2.5.16",
     "vue-loader": "^13.3.0",
-    "vue-router": "^3.0.1",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",

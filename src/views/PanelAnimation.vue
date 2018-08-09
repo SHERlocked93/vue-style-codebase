@@ -7,12 +7,19 @@
 
 <template>
   <div class='panel' id='panel-animation'>
-    <h2>Panel Animation</h2>
+    <h2>Panel Animation</h2><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h2>呵呵呵</h2><br><br><br><br>
+    <h3>哈哈哈</h3><br><br>
+    <h3>哈哈哈</h3><br><br>
+    <h3>哈哈哈</h3><br><br>
+    <h3>哈哈哈</h3><br><br>
+    <h3>哈哈哈</h3><br><br>
+    <h3>哈哈哈</h3><br><br><br>
   </div>
 </template>
 
 <script type='text/javascript'>
-  import Catalog from 'utils/genCatalog'
+  import Catalog from 'progress-catalog'
   
   export default {
     name: 'PanelAnimation',
@@ -22,7 +29,7 @@
     mounted() {
       new Catalog({
         contentEl: 'panel-animation',
-        catelogEl: `catalog-content-${this.$options.name}`,
+        catalogEl: `catalog-content-${this.$options.name}`,
         selector: ['h2', 'h3']
       })
     }
