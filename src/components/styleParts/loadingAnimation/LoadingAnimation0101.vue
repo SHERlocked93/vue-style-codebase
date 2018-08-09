@@ -15,7 +15,7 @@
 
 <script type='text/javascript'>
   export default {
-    name: 'LoadingAnimation1',
+    name: 'LoadingAnimation0101',
     props: {
       timingFunction: {
         type: String,

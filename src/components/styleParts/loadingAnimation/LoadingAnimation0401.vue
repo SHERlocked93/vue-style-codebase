@@ -1,8 +1,8 @@
 /**
 * 创建于 2018/8/1
 * 作者: QianYu
-* 功能: LoadingAnimation0301 环形 Loading效果
-* Codepen: https://codepen.io/psyonline/pen/yayYWg
+* 功能: LoadingAnimation0401 环形 Loading效果
+* Codepen: https://codepen.io/martinvd/pen/xbQJom
 */
 
 <template>
@@ -15,10 +15,7 @@
 
 <script type='text/javascript'>
   export default {
-    name: 'LoadingAnimation0301',
-    mounted() {
-    
-    }
+    name: 'LoadingAnimation0401'
   }
 </script>
 

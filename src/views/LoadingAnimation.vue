@@ -88,11 +88,17 @@
         <demo-box thisName='LoadingAnimation0303'>
           <loading-animation0303></loading-animation0303>
         </demo-box>
+        <demo-box thisName='LoadingAnimation0304'>
+          <loading-animation0304></loading-animation0304>
+        </demo-box>
       </template>
       
       <template slot='realization'>
         <p data-height="265" data-theme-id="light" data-slug-hash="yJxFo" data-default-tab="css,result" data-user="filipekiss" data-pen-title="Loading Animations" data-preview="true"
            class="codepen">See the Pen <a href="https://codepen.io/filipekiss/pen/yJxFo/">Loading Animations</a> by Filipe Kiss (<a href="https://codepen.io/filipekiss">@filipekiss</a>) on <a
+          href="https://codepen.io">CodePen</a>.</p>
+        <p data-height="265" data-theme-id="light" data-slug-hash="wBQveM" data-default-tab="css,result" data-user="martinvd" data-pen-title="CSS loading animation 9" data-preview="true"
+           class="codepen">See the Pen <a href="https://codepen.io/martinvd/pen/wBQveM/">CSS loading animation 9</a> by Martin van Driel (<a href="https://codepen.io/martinvd">@martinvd</a>) on <a
           href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
@@ -101,17 +107,15 @@
     <h3>丝带 Loading效果</h3>
     <demo-block>
       <template slot='blackboard'>
-        <demo-box>
+        <demo-box thisName='LoadingAnimation0401'>
           <loading-animation0401></loading-animation0401>
         </demo-box>
       </template>
       
-      <template slot='description'>
-        小球通常使用<code>border-radius</code>为50%的div来实现，再使用<code>animation</code>来实现动画。
-      </template>
-      
       <template slot='realization'>
-      
+        <p data-height="265" data-theme-id="light" data-slug-hash="xbQJom" data-default-tab="css,result" data-user="martinvd" data-pen-title="CSS loading animation 12" data-preview="true"
+           class="codepen">See the Pen <a href="https://codepen.io/martinvd/pen/xbQJom/">CSS loading animation 12</a> by Martin van Driel (<a href="https://codepen.io/martinvd">@martinvd</a>) on <a
+          href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
     
@@ -128,11 +132,17 @@
         <demo-box thisName='LoadingAnimation0503'>
           <loading-animation0503></loading-animation0503>
         </demo-box>
+        <demo-box thisName='LoadingAnimation0504'>
+          <loading-animation0504></loading-animation0504>
+        </demo-box>
       </template>
       
       <template slot='realization'>
         <p data-height="265" data-theme-id="light" data-slug-hash="yJxFo" data-default-tab="css,result" data-user="filipekiss" data-pen-title="Loading Animations" data-preview="true"
            class="codepen">See the Pen <a href="https://codepen.io/filipekiss/pen/yJxFo/">Loading Animations</a> by Filipe Kiss (<a href="https://codepen.io/filipekiss">@filipekiss</a>) on <a
+          href="https://codepen.io">CodePen</a>.</p>
+        <p data-height="265" data-theme-id="light" data-slug-hash="CxliK" data-default-tab="css,result" data-user="hakimel" data-pen-title="CSS Spinner Animation" data-preview="true"
+           class="codepen">See the Pen <a href="https://codepen.io/hakimel/pen/CxliK/">CSS Spinner Animation</a> by Hakim El Hattab (<a href="https://codepen.io/hakimel">@hakimel</a>) on <a
           href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
@@ -173,10 +183,12 @@
   import LoadingAnimation0301 from 'styleParts/loadingAnimation/LoadingAnimation0301'
   import LoadingAnimation0302 from 'styleParts/loadingAnimation/LoadingAnimation0302'
   import LoadingAnimation0303 from 'styleParts/loadingAnimation/LoadingAnimation0303'
+  import LoadingAnimation0304 from 'styleParts/loadingAnimation/LoadingAnimation0304'
   import LoadingAnimation0401 from 'styleParts/loadingAnimation/LoadingAnimation0401'
   import LoadingAnimation0501 from 'styleParts/loadingAnimation/LoadingAnimation0501'
   import LoadingAnimation0502 from 'styleParts/loadingAnimation/LoadingAnimation0502'
   import LoadingAnimation0503 from 'styleParts/loadingAnimation/LoadingAnimation0503'
+  import LoadingAnimation0504 from 'styleParts/loadingAnimation/LoadingAnimation0504'
   import Catalog from 'progress-catalog'
   
   export default {
@@ -186,9 +198,10 @@
       LoadingAnimation0201, LoadingAnimation0202,
       LoadingAnimation0203, LoadingAnimation0204,
       LoadingAnimation0301, LoadingAnimation0302,
-      LoadingAnimation0303, LoadingAnimation0401,
+      LoadingAnimation0303,
+      LoadingAnimation0304, LoadingAnimation0401,
       LoadingAnimation0501, LoadingAnimation0502,
-      LoadingAnimation0503, DemoBlock
+      LoadingAnimation0503, LoadingAnimation0504, DemoBlock
     },
     mounted() {
       new Catalog({

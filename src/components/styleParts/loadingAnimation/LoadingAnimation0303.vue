@@ -1,7 +1,7 @@
 /**
 * 创建于 2018/8/1
 * 作者: QianYu
-* 功能: LoadingAnimation0301 环形 Loading效果
+* 功能: LoadingAnimation0303 环形 Loading效果
 * Codepen: https://codepen.io/Erik/pen/cslHn
 */
 
@@ -11,7 +11,7 @@
 
 <script type='text/javascript'>
   export default {
-    name: 'LoadingAnimation0301'
+    name: 'LoadingAnimation0303'
   }
 </script>
 

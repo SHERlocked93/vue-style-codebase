@@ -1,20 +1,20 @@
 /**
 * 创建于 2018/7/31
 * 作者: QianYu
-* 功能: LoadingAnimation2  小球球 Loading效果
+* 功能: LoadingAnimation0201  小球球 Loading效果
 * Codepen: https://codepen.io/stryju/pen/zrijB
 */
 
 
 <template>
-  <div class='loading-animation2'>
+  <div class='loading-animation0201'>
     <i></i>
   </div>
 </template>
 
 <script type='text/javascript'>
   export default {
-    name: 'LoadingAnimation2'
+    name: 'LoadingAnimation0201'
   }
 </script>
 
