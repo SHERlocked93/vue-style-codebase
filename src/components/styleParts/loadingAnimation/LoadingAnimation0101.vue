@@ -27,6 +27,7 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   $base-color: rgba(66, 185, 131, .8); // 修改主颜色
+  $base-color2: rgba(66, 185, 131, .2); // 修改主颜色2
   
   .loading-animation {
     transform: scale(.3); // 修改大小
@@ -57,7 +58,7 @@
     
     @keyframes load {
       0% {
-        background: #ccc;
+        background: $base-color2;
         margin-top: $margin-top;
         height: 10%;
       }
@@ -67,7 +68,7 @@
         margin-top: 0;
       }
       100% {
-        background: #ccc;
+        background: $base-color2;
         height: 10%;
         margin-top: $margin-top;
       }
