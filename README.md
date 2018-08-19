@@ -1,5 +1,10 @@
 ![logo](https://github.com/SHERlocked93/vue-style-codebase/blob/master/src/assets/logo%20green.png)
 
+<p align="center">
+  <img src="https://img.shields.io/badge/build-passing-brightgreen.svg">
+  <a href="https://www.npmjs.com/package/vvui"><img src="https://img.shields.io/badge/licence-MIT-blue.svg"></a> 
+</p>
+
 # vue-style-codebase
 
 自用样式库，主要是用来预览各种样式，方便 UI、PM 进行样式设计，和自己平时的开发。也欢迎大家给我提issue，提pr啊~~~
@@ -33,4 +38,5 @@ npm run build --report
 - [x] UI框架
 - [x] Demo Box
 - [x] 内容页目录自动生成
+- [x] 骨架屏
 - [ ] 自选主题
