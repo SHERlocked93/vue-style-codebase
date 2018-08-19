@@ -119,7 +119,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     new SkeletonWebpackPlugin({
       webpackConfig: require('./webpack.skeleton.conf'),
       quiet: true,
+      minimize: true,
       router: {
+        mode: 'hash',
         routes: [
           {
             path: '/',

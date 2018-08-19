@@ -30,8 +30,8 @@ let skeletonWebpackConfig = merge(baseWebpackConfig, {
   plugins: []
 })
 
-
-skeletonWebpackConfig.module.rules[0].options.loaders = utils.cssLoaders({
+skeletonWebpackConfig.module.rules
+  .find(T => T.loader === 'vue-loader').options.loaders = utils.cssLoaders({
   sourceMap: sourceMapEnabled,
   extract: true
 })

@@ -70,6 +70,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       webpackConfig: require('./webpack.skeleton.conf'),
       quiet: true,
       router: {
+        mode: 'hash',
         routes: [
           {
             path: '/',
