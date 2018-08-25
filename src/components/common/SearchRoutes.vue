@@ -120,6 +120,7 @@
         color: $medium;
         cursor: pointer;
         padding: 0 5px;
+        @include overflowEllipsis;
         &:hover {
           color: $green;
           background-color: inherit;

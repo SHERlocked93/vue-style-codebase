@@ -1,5 +1,5 @@
 /**
-* 创建于 2018/8/1
+* 创建于 2018/8/15
 * 作者: QianYu
 * 功能: LoadingAnimation0304 环形 Loading效果
 * Codepen: https://codepen.io/martinvd/pen/wBQveM
@@ -45,22 +45,18 @@
     .inner.one {
       border-left: 8px solid $base-color;
       border-right: 8px solid $base-color;
-      animation: rotate-left 2s linear infinite;
+      animation: spin 2s linear infinite;
     }
     
     .inner.two {
       border-top: 8px solid $base-color1;
       border-bottom: 8px solid $base-color1;
-      animation: rotate-left 3s linear infinite;
+      animation: spin 3s linear infinite;
     }
     
-    @keyframes rotate-left {
-      0% {
-        transform: rotate(360deg);
-      }
-      100% {
-        transform: rotate(0deg);
-      }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   }
 

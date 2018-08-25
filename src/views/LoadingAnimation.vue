@@ -91,6 +91,12 @@
         <demo-box thisName='LoadingAnimation0304'>
           <loading-animation0304></loading-animation0304>
         </demo-box>
+        <demo-box thisName='LoadingAnimation0305'>
+          <loading-animation0305></loading-animation0305>
+        </demo-box>
+        <demo-box thisName='LoadingAnimation0306'>
+          <loading-animation0306></loading-animation0306>
+        </demo-box>
       </template>
       
       <template slot='realization'>
@@ -100,6 +106,9 @@
         <p data-height="265" data-theme-id="light" data-slug-hash="wBQveM" data-default-tab="css,result" data-user="martinvd" data-pen-title="CSS loading animation 9" data-preview="true"
            class="codepen">See the Pen <a href="https://codepen.io/martinvd/pen/wBQveM/">CSS loading animation 9</a> by Martin van Driel (<a href="https://codepen.io/martinvd">@martinvd</a>) on <a
           href="https://codepen.io">CodePen</a>.</p>
+        <p data-height="265" data-theme-id="light" data-slug-hash="aIuko" data-default-tab="css,result" data-user="francoislesenne" data-pen-title="Loading animation with keyframe for SCSS & Jade."
+           data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/francoislesenne/pen/aIuko/">Loading animation with keyframe for SCSS & Jade.</a> by François Lesenne (<a
+          href="https://codepen.io/francoislesenne">@francoislesenne</a>) on <a href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
     
@@ -183,6 +192,8 @@
   import LoadingAnimation0302 from 'styleParts/loadingAnimation/LoadingAnimation0302'
   import LoadingAnimation0303 from 'styleParts/loadingAnimation/LoadingAnimation0303'
   import LoadingAnimation0304 from 'styleParts/loadingAnimation/LoadingAnimation0304'
+  import LoadingAnimation0305 from 'styleParts/loadingAnimation/LoadingAnimation0305'
+  import LoadingAnimation0306 from 'styleParts/loadingAnimation/LoadingAnimation0306'
   import LoadingAnimation0401 from 'styleParts/loadingAnimation/LoadingAnimation0401'
   import LoadingAnimation0501 from 'styleParts/loadingAnimation/LoadingAnimation0501'
   import LoadingAnimation0502 from 'styleParts/loadingAnimation/LoadingAnimation0502'
@@ -197,8 +208,9 @@
       LoadingAnimation0201, LoadingAnimation0202,
       LoadingAnimation0203, LoadingAnimation0204,
       LoadingAnimation0301, LoadingAnimation0302,
-      LoadingAnimation0303,
-      LoadingAnimation0304, LoadingAnimation0401,
+      LoadingAnimation0303, LoadingAnimation0304,
+      LoadingAnimation0305, LoadingAnimation0306,
+      LoadingAnimation0401,
       LoadingAnimation0501, LoadingAnimation0502,
       LoadingAnimation0503, LoadingAnimation0504, DemoBlock
     },

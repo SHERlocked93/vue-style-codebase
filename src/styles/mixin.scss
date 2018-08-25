@@ -53,3 +53,33 @@ $sidebar-width: 330px;
     margin-top: 2px;
   }
 }
+
+// 文本超出显示省略号
+@mixin overflowEllipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// 透明度(含IEhack)
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacityIE: $opacity * 100;
+  filter: alpha(opacity=$opacityIE);
+}
+
+//region keyframes
+
+// 顺时针自选
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// 逆时针自旋
+@keyframes spinReverse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+//endregion
