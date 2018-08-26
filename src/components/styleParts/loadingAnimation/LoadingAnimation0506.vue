@@ -24,7 +24,7 @@
   $minu-time: 12s;
   
   .loading-animation0506 {
-    transform: scale(.6); // 修改大小
+    transform: scale(.8); // 修改大小
     
     .clock {
       border-radius: 50%;

@@ -27,7 +27,7 @@
   $lapDuration: 3s;
   
   .loading-animation0504 {
-    transform: scale(.4); // 修改大小
+    transform: scale(.45); // 修改大小
     position: absolute;
     top: 50%;
     left: 50%;

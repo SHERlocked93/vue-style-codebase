@@ -141,14 +141,17 @@
         <demo-box thisName='LoadingAnimation0503'>
           <loading-animation0503></loading-animation0503>
         </demo-box>
-        <demo-box thisName='LoadingAnimation0504'>
-          <loading-animation0504></loading-animation0504>
-        </demo-box>
         <demo-box thisName='LoadingAnimation0505'>
           <loading-animation0505></loading-animation0505>
         </demo-box>
         <demo-box thisName='LoadingAnimation0506'>
           <loading-animation0506></loading-animation0506>
+        </demo-box>
+        <demo-box thisName='LoadingAnimation0504'>
+          <loading-animation0504></loading-animation0504>
+        </demo-box>
+        <demo-box thisName='LoadingAnimation0507'>
+          <loading-animation0507></loading-animation0507>
         </demo-box>
       </template>
       
@@ -164,6 +167,9 @@
           href="https://codepen.io">CodePen</a>.</p>
         <p data-height="265" data-theme-id="light" data-slug-hash="oKxep" data-default-tab="css,result" data-user="TaniaLD" data-pen-title="Loaders (WIP)" data-preview="true"
            class="codepen">See the Pen <a href="https://codepen.io/TaniaLD/pen/oKxep/">Loaders (WIP)</a> by Tania LD (<a href="https://codepen.io/TaniaLD">@TaniaLD</a>) on <a
+          href="https://codepen.io">CodePen</a>.</p>
+        <p data-height="265" data-theme-id="light" data-slug-hash="MYxYeo" data-default-tab="html,result" data-user="madetoday" data-pen-title="Hourglass loader" data-preview="true"
+           class="codepen">See the Pen <a href="https://codepen.io/madetoday/pen/MYxYeo/">Hourglass loader</a> by Lenka (<a href="https://codepen.io/madetoday">@madetoday</a>) on <a
           href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
@@ -202,6 +208,7 @@
   import LoadingAnimation0504 from 'styleParts/loadingAnimation/LoadingAnimation0504'
   import LoadingAnimation0505 from 'styleParts/loadingAnimation/LoadingAnimation0505'
   import LoadingAnimation0506 from 'styleParts/loadingAnimation/LoadingAnimation0506'
+  import LoadingAnimation0507 from 'styleParts/loadingAnimation/LoadingAnimation0507'
   import Catalog from 'progress-catalog'
   
   export default {
@@ -216,7 +223,8 @@
       LoadingAnimation0401,
       LoadingAnimation0501, LoadingAnimation0502,
       LoadingAnimation0503, LoadingAnimation0504,
-      LoadingAnimation0505,LoadingAnimation0506, DemoBlock
+      LoadingAnimation0505, LoadingAnimation0506,
+      LoadingAnimation0507, DemoBlock
     },
     mounted() {
       new Catalog({
