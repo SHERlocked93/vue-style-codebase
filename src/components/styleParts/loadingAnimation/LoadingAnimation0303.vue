@@ -62,7 +62,7 @@
       height: 45px;
       border-radius: 200px 0 0 0;
       background: linear-gradient(45deg, transparent 0%, $base-color 50%, $base-color 100%);
-      animation: loading .9s linear infinite;
+      animation: loading 1s linear infinite;
     }
     
     @keyframes loading {

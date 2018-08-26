@@ -144,6 +144,9 @@
         <demo-box thisName='LoadingAnimation0504'>
           <loading-animation0504></loading-animation0504>
         </demo-box>
+        <demo-box thisName='LoadingAnimation0505'>
+          <loading-animation0505></loading-animation0505>
+        </demo-box>
       </template>
       
       <template slot='realization'>
@@ -152,6 +155,9 @@
           href="https://codepen.io">CodePen</a>.</p>
         <p data-height="265" data-theme-id="light" data-slug-hash="CxliK" data-default-tab="css,result" data-user="hakimel" data-pen-title="CSS Spinner Animation" data-preview="true"
            class="codepen">See the Pen <a href="https://codepen.io/hakimel/pen/CxliK/">CSS Spinner Animation</a> by Hakim El Hattab (<a href="https://codepen.io/hakimel">@hakimel</a>) on <a
+          href="https://codepen.io">CodePen</a>.</p>
+        <p data-height="265" data-theme-id="light" data-slug-hash="OoMxYG" data-default-tab="css,result" data-user="akshaycodes" data-pen-title="CSS Double Helix #07" data-preview="true"
+           class="codepen">See the Pen <a href="https://codepen.io/akshaycodes/pen/OoMxYG/">CSS Double Helix #07</a> by Akshay (<a href="https://codepen.io/akshaycodes">@akshaycodes</a>) on <a
           href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
@@ -164,17 +170,6 @@
     <h3>哈哈哈</h3><br><br>
     <h3>哈哈哈</h3><br><br>
     <h3>哈哈哈</h3><br><br><br>
-    <h3>哈哈哈</h3><br><br><br><br>
-    <h2>呵呵呵</h2><br><br><br><br>
-    <h3>哈哈哈</h3><br><br><br><br>
-    <h3>哈哈哈</h3><br><br><br><br>
-    <h3>哈哈哈</h3><br><br><br><br>
-    <h3>哈哈哈</h3><br><br><br><br>
-    <h3>哈哈哈</h3><br><br><br><br>
-    <h3>哈哈哈</h3><br><br><br><br>
-    <h3>哈哈哈</h3><br><br><br><br>
-    <h3>哈哈哈</h3><br><br><br><br>
-    <h3>哈哈哈</h3><br><br><br><br>
     <h3>哈哈哈</h3><br><br><br><br>
   </div>
 </template>
@@ -199,6 +194,7 @@
   import LoadingAnimation0502 from 'styleParts/loadingAnimation/LoadingAnimation0502'
   import LoadingAnimation0503 from 'styleParts/loadingAnimation/LoadingAnimation0503'
   import LoadingAnimation0504 from 'styleParts/loadingAnimation/LoadingAnimation0504'
+  import LoadingAnimation0505 from 'styleParts/loadingAnimation/LoadingAnimation0505'
   import Catalog from 'progress-catalog'
   
   export default {
@@ -212,7 +208,8 @@
       LoadingAnimation0305, LoadingAnimation0306,
       LoadingAnimation0401,
       LoadingAnimation0501, LoadingAnimation0502,
-      LoadingAnimation0503, LoadingAnimation0504, DemoBlock
+      LoadingAnimation0503, LoadingAnimation0504,
+      LoadingAnimation0505, DemoBlock
     },
     mounted() {
       new Catalog({

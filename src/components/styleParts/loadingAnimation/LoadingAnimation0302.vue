@@ -32,9 +32,7 @@
   }
   
   @keyframes spin {
-    100% {
-      transform: rotate(360deg);
-    }
+    100% { transform: rotate(360deg); }
   }
 
 </style>
