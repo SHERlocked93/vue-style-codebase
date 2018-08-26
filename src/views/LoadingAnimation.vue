@@ -147,6 +147,9 @@
         <demo-box thisName='LoadingAnimation0505'>
           <loading-animation0505></loading-animation0505>
         </demo-box>
+        <demo-box thisName='LoadingAnimation0506'>
+          <loading-animation0506></loading-animation0506>
+        </demo-box>
       </template>
       
       <template slot='realization'>
@@ -158,6 +161,9 @@
           href="https://codepen.io">CodePen</a>.</p>
         <p data-height="265" data-theme-id="light" data-slug-hash="OoMxYG" data-default-tab="css,result" data-user="akshaycodes" data-pen-title="CSS Double Helix #07" data-preview="true"
            class="codepen">See the Pen <a href="https://codepen.io/akshaycodes/pen/OoMxYG/">CSS Double Helix #07</a> by Akshay (<a href="https://codepen.io/akshaycodes">@akshaycodes</a>) on <a
+          href="https://codepen.io">CodePen</a>.</p>
+        <p data-height="265" data-theme-id="light" data-slug-hash="oKxep" data-default-tab="css,result" data-user="TaniaLD" data-pen-title="Loaders (WIP)" data-preview="true"
+           class="codepen">See the Pen <a href="https://codepen.io/TaniaLD/pen/oKxep/">Loaders (WIP)</a> by Tania LD (<a href="https://codepen.io/TaniaLD">@TaniaLD</a>) on <a
           href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
@@ -195,6 +201,7 @@
   import LoadingAnimation0503 from 'styleParts/loadingAnimation/LoadingAnimation0503'
   import LoadingAnimation0504 from 'styleParts/loadingAnimation/LoadingAnimation0504'
   import LoadingAnimation0505 from 'styleParts/loadingAnimation/LoadingAnimation0505'
+  import LoadingAnimation0506 from 'styleParts/loadingAnimation/LoadingAnimation0506'
   import Catalog from 'progress-catalog'
   
   export default {
@@ -209,7 +216,7 @@
       LoadingAnimation0401,
       LoadingAnimation0501, LoadingAnimation0502,
       LoadingAnimation0503, LoadingAnimation0504,
-      LoadingAnimation0505, DemoBlock
+      LoadingAnimation0505,LoadingAnimation0506, DemoBlock
     },
     mounted() {
       new Catalog({
