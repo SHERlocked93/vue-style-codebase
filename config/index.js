@@ -49,7 +49,7 @@ module.exports = {
     index: path.resolve(__dirname, '../vue-style-codebase/index.html'),
     
     // Paths
-    assetsRoot: path.resolve(__dirname, '../vue-style-codebase'),
+    assetsRoot: path.resolve(__dirname, '..'),
     assetsSubDirectory: 'vue-style-codebase/static',
     assetsPublicPath: '/',
     
