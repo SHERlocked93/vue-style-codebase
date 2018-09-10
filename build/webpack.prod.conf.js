@@ -11,6 +11,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 const env = require('../config/prod.env')
 
@@ -142,6 +144,25 @@ const webpackConfig = merge(baseWebpackConfig, {
           }
         ]
       }
+    }),
+  
+    new PrerenderSPAPlugin({
+      staticDir: config.build.assetsRoot,
+      outputDir: path.join(config.build.assetsRoot, 'vue-style-codebase'),
+      indexPath: config.build.index,
+    
+      // 对应路由文件的path
+      routes: [
+        '/',
+        '/loadingAnimation',
+        '/hoverAnimation',
+        '/panelAnimation'
+      ],
+    
+      renderer: new Renderer({
+        headless: false,            // 无桌面系统去掉
+        renderAfterDocumentEvent: 'render-event'
+      })
     })
   ]
 })

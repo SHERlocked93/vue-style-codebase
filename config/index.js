@@ -50,8 +50,8 @@ module.exports = {
     
     // Paths
     assetsRoot: path.resolve(__dirname, '../vue-style-codebase'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: './',
+    assetsSubDirectory: 'vue-style-codebase/static',
+    assetsPublicPath: '/',
     
     /**
      * Source Maps

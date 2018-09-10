@@ -30,4 +30,8 @@ export const routes = [
   }
 ]
 
-export default new Router({ routes })
+export default new Router({
+  mode: 'history',
+  base: '/vue-style-codebase/',
+  routes
+})
