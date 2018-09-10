@@ -39,5 +39,6 @@ npm run build --report
 - [x] Demo Box
 - [x] 内容页目录自动生成
 - [x] 骨架屏
+- [x] 预渲染机制
 - [ ] 自选主题
 - [ ] 组件导出
