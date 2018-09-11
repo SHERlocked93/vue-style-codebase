@@ -161,7 +161,8 @@ const webpackConfig = merge(baseWebpackConfig, {
 
       renderer: new Renderer({
         // headless: false,            // 无桌面系统去掉
-        renderAfterDocumentEvent: 'render-event'
+        renderAfterDocumentEvent: 'render-event',
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
       })
     })
   ]
