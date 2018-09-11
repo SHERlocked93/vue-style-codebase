@@ -1,3 +1,4 @@
+<!--suppress CssUnknownTarget -->
 <template>
   <div id="app" :class='{"is-dashboard": isDashboard}'>
     <!-- 头部 -->

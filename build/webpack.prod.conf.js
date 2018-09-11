@@ -110,7 +110,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       children: true,
       minChunks: 3
     }),
-    
+
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -145,12 +145,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         ]
       }
     }),
-  
+
     new PrerenderSPAPlugin({
       staticDir: config.build.assetsRoot,
       outputDir: path.join(config.build.assetsRoot, 'vue-style-codebase'),
       indexPath: config.build.index,
-    
+
       // 对应路由文件的path
       routes: [
         '/',
@@ -158,9 +158,9 @@ const webpackConfig = merge(baseWebpackConfig, {
         '/hoverAnimation',
         '/panelAnimation'
       ],
-    
+
       renderer: new Renderer({
-        headless: false,            // 无桌面系统去掉
+        // headless: false,            // 无桌面系统去掉
         renderAfterDocumentEvent: 'render-event'
       })
     })
@@ -169,7 +169,7 @@ const webpackConfig = merge(baseWebpackConfig, {
 
 if (config.build.productionGzip) {
   const CompressionWebpackPlugin = require('compression-webpack-plugin')
-  
+
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({
       asset: '[path].gz[query]',
