@@ -9,6 +9,8 @@
   <div class='loading' id='loading-animation'>
     <h2 id='artical-content'>Loading Animation</h2>
     
+    除了下面的组件方式实现之外还可以使用GIF直接代替，缺点当然显而易见，灵活性不够；这里推介一个自助<a href='http://ajaxload.info/'>生成GIF的小网站</a>；
+    
     <!--#01 音阶波浪 Loading效果-->
     <h3>音阶波浪 Loading效果</h3>
     <demo-block>
@@ -240,5 +242,8 @@
   @import "~styles/mixin.scss";
   
   .loading {
+    a {
+      color: $green;
+    }
   }
 </style>
