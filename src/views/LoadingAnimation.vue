@@ -155,6 +155,9 @@
         <demo-box thisName='LoadingAnimation0507'>
           <loading-animation0507></loading-animation0507>
         </demo-box>
+        <demo-box thisName='LoadingAnimation0508'>
+          <loading-animation0508></loading-animation0508>
+        </demo-box>
       </template>
       
       <template slot='realization'>
@@ -172,6 +175,9 @@
           href="https://codepen.io">CodePen</a>.</p>
         <p data-height="265" data-theme-id="light" data-slug-hash="MYxYeo" data-default-tab="html,result" data-user="madetoday" data-pen-title="Hourglass loader" data-preview="true"
            class="codepen">See the Pen <a href="https://codepen.io/madetoday/pen/MYxYeo/">Hourglass loader</a> by Lenka (<a href="https://codepen.io/madetoday">@madetoday</a>) on <a
+          href="https://codepen.io">CodePen</a>.</p>
+        <p data-height="265" data-theme-id="0" data-slug-hash="KBxYZg" data-default-tab="css,result" data-user="comehope" data-pen-title="Roller coaster loader" data-preview="true"
+           class="codepen">See the Pen <a href="https://codepen.io/comehope/pen/KBxYZg/">Roller coaster loader</a> by Comehope (<a href="https://codepen.io/comehope">@comehope</a>) on <a
           href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
@@ -211,6 +217,7 @@
   import LoadingAnimation0505 from 'styleParts/loadingAnimation/LoadingAnimation0505'
   import LoadingAnimation0506 from 'styleParts/loadingAnimation/LoadingAnimation0506'
   import LoadingAnimation0507 from 'styleParts/loadingAnimation/LoadingAnimation0507'
+  import LoadingAnimation0508 from 'styleParts/loadingAnimation/LoadingAnimation0508'
   import Catalog from 'progress-catalog'
   
   export default {
@@ -226,7 +233,7 @@
       LoadingAnimation0501, LoadingAnimation0502,
       LoadingAnimation0503, LoadingAnimation0504,
       LoadingAnimation0505, LoadingAnimation0506,
-      LoadingAnimation0507, DemoBlock
+      LoadingAnimation0507, LoadingAnimation0508, DemoBlock
     },
     mounted() {
       new Catalog({
