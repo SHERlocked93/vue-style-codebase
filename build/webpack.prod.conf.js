@@ -10,7 +10,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
@@ -110,7 +109,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       children: true,
       minChunks: 3
     }),
-
+    
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -119,38 +118,11 @@ const webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ]),
-    new SkeletonWebpackPlugin({
-      webpackConfig: require('./webpack.skeleton.conf'),
-      quiet: true,
-      minimize: true,
-      router: {
-        mode: 'hash',
-        routes: [
-          {
-            path: '/',
-            skeletonId: 'skeleton-screen'
-          },
-          {
-            path: '/loadingAnimation',
-            skeletonId: 'skeleton-screen'
-          },
-          {
-            path: '/hoverAnimation',
-            skeletonId: 'skeleton-screen'
-          },
-          {
-            path: '/panelAnimation',
-            skeletonId: 'skeleton-screen'
-          }
-        ]
-      }
-    }),
-
     new PrerenderSPAPlugin({
       staticDir: config.build.assetsRoot,
       outputDir: path.join(config.build.assetsRoot, 'vue-style-codebase'),
       indexPath: config.build.index,
-
+      
       // 对应路由文件的path
       routes: [
         '/',
@@ -158,7 +130,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         '/hoverAnimation',
         '/panelAnimation'
       ],
-
+      
       renderer: new Renderer({
         // headless: false,            // 无桌面系统去掉
         renderAfterDocumentEvent: 'render-event',
@@ -170,7 +142,7 @@ const webpackConfig = merge(baseWebpackConfig, {
 
 if (config.build.productionGzip) {
   const CompressionWebpackPlugin = require('compression-webpack-plugin')
-
+  
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({
       asset: '[path].gz[query]',
