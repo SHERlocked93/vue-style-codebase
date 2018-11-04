@@ -26,6 +26,14 @@
       goContent() {
         this.$router.push("loadingAnimation")
       }
+    },
+    mounted() {
+      document.querySelector('.hello-wrap-hook').onmousemove = e => {
+        const x = e.pageX - e.target.offsetLeft + e.target.clientWidth / 2
+        const y = e.pageY - e.target.offsetTop + e.target.clientHeight / 2
+        e.target.style.setProperty('--x', `${ x }px`)
+        e.target.style.setProperty('--y', `${ y }px`)
+      }
     }
   }
 </script>
