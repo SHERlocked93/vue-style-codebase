@@ -1,6 +1,6 @@
 {
   "name": "vue-style-codebase",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Style Codebase",
   "author": "SHERlocked93 <443033099@qq.com>",
   "private": true,
@@ -8,7 +8,8 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "build:report": "npm run build --report"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -61,7 +62,7 @@
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.17",
     "webpack": "^3.6.0",
-    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0"
   },

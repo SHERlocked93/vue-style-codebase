@@ -107,7 +107,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       children: true,
       minChunks: 3
     }),
-
+    
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -121,7 +121,12 @@ const webpackConfig = merge(baseWebpackConfig, {
 
 if (config.build.productionGzip) {
   const CompressionWebpackPlugin = require('compression-webpack-plugin')
-
+  
+  if (config.build.bundleAnalyzerReport) {
+    const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+    webpackConfig.plugins.push(new BundleAnalyzerPlugin())
+  }
+  
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({
       asset: '[path].gz[query]',
