@@ -3,6 +3,7 @@
 * 作者: QianYu
 * 功能: HoverAnimation0301 按钮Hover效果
 * Codepen: https://codepen.io/SHERlocked93/pen/dQPymB
+* 参考： https://www.zcfy.cc/article/stunning-hover-effects-with-css-variables
 */
 
 

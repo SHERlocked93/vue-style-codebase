@@ -47,12 +47,18 @@
         <demo-box thisName='HoverAnimation0301'>
           <hover-animation0301></hover-animation0301>
         </demo-box>
+        <demo-box thisName='HoverAnimation0302'>
+          <hover-animation0302></hover-animation0302>
+        </demo-box>
       </template>
       
       <template slot='realization'>
         <p data-height="265" data-theme-id="0" data-slug-hash="dQPymB" data-default-tab="css,result" data-user="SHERlocked93" data-pen-title="Mouse cursor gradient tracking"
            class="codepen">See the Pen <a href="https://codepen.io/SHERlocked93/pen/dQPymB/">Mouse cursor gradient tracking</a> by SHERlocked93 (<a
           href="https://codepen.io/SHERlocked93">@SHERlocked93</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        <p data-height="265" data-theme-id="0" data-slug-hash="zyLPEy" data-default-tab="css,result" data-user="SHERlocked93" data-pen-title="背景色渐变过渡实现按钮的明暗变化" data-preview="true"
+           class="codepen">See the Pen <a href="https://codepen.io/SHERlocked93/pen/zyLPEy/">背景色渐变过渡实现按钮的明暗变化</a> by SHERlocked93 (<a href="https://codepen.io/SHERlocked93">@SHERlocked93</a>) on <a
+          href="https://codepen.io">CodePen</a>.</p>
       </template>
     </demo-block>
   </div>
@@ -64,12 +70,13 @@
   import HoverAnimation0101 from 'styleParts/hoverAnimation/HoverAnimation0101'
   import HoverAnimation0201 from 'styleParts/hoverAnimation/HoverAnimation0201'
   import HoverAnimation0301 from 'styleParts/hoverAnimation/HoverAnimation0301'
+  import HoverAnimation0302 from 'styleParts/hoverAnimation/HoverAnimation0302'
   
   export default {
     name: 'HoverAnimation',
     components: {
       HoverAnimation0101, HoverAnimation0201,
-      HoverAnimation0301
+      HoverAnimation0301, HoverAnimation0302
     },
     mounted() {
       new Catalog({
