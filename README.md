@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/build-passing-brightgreen.svg">
-  <a href="https://www.npmjs.com/package/vvui"><img src="https://img.shields.io/badge/licence-MIT-blue.svg"></a> 
+  <a href="https://www.npmjs.com/package/vvui"><img src="https://img.shields.io/badge/licence-MIT-blue.svg"></a>
 </p>
 
 # vue-style-codebase
@@ -14,7 +14,7 @@
 
 ## Build Setup
 
-[线上DEMO](http://sherlocked93.club/vue-style-codebase/)
+[线上DEMO](https://SHERlocked93.github.io/vue-style-codebase)
 
 
 
