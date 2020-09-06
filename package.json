@@ -11,6 +11,7 @@
     "build": "node build/build.js",
     "build:report": "npm run build --report"
   },
+  "homepage": "https://SHERlocked93.github.io/vue-style-codebase",
   "dependencies": {
     "axios": "^0.18.0",
     "clipboard": "^2.0.1",
